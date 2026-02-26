@@ -117,11 +117,11 @@ function render() {
     return c.title.toLowerCase().includes(q) || (c.brief || '').toLowerCase().includes(q);
   });
 
-  // MEJORA: ORDEN CRONOLÓGICO (Más próximos arriba)
+  // ORDENAR POR FECHA (Próximos arriba, sin fecha abajo)
   vis.sort((a, b) => {
     if (!a.date) return 1;
     if (!b.date) return -1;
-    return new Date(a.date + 'T00:00:00') - new Date(b.date + 'T00:00:00');
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
   });
 
   document.getElementById('root').innerHTML = `
@@ -210,7 +210,21 @@ function renderDetail() {
 }
 
 function insertTable() {
-  const tableHTML = `<table><thead><tr><th>Visual</th><th>Audio (Locución)</th></tr></thead><tbody><tr><td>...</td><td>...</td></tr></tbody></table><br>`;
+  const tableHTML = `
+    <table style="width:100%; border-collapse: collapse; margin-top: 10px;">
+      <thead>
+        <tr style="background-color: #f1f0ee;">
+          <th style="border: 1px solid #d5d4cf; padding: 10px;">Visual</th>
+          <th style="border: 1px solid #d5d4cf; padding: 10px;">Audio (Locución / Voiceover)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border: 1px solid #d5d4cf; padding: 10px;">...</td>
+          <td style="border: 1px solid #d5d4cf; padding: 10px;">...</td>
+        </tr>
+      </tbody>
+    </table><br>`;
   const editor = document.getElementById('briefEditor');
   editor.focus();
   document.execCommand('insertHTML', false, tableHTML);
@@ -234,7 +248,10 @@ function deleteCard() {
   persist(); closeDetail(); render();
 }
 
-function closeDetail() { document.getElementById('detailOverlay').classList.add('hidden'); document.body.style.overflow = 'auto'; }
+function closeDetail() { 
+  document.getElementById('detailOverlay').classList.add('hidden'); 
+  document.body.style.overflow = 'auto'; 
+}
 function detailBgClose(e) { if(e.target.id === 'detailOverlay') closeDetail(); }
 
 load();
