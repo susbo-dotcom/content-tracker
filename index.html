@@ -134,7 +134,7 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .detail-body{padding:24px 48px 40px;display:flex;flex-direction:column;gap:20px;}
 .section-block{display:flex;flex-direction:column;gap:8px;}
 .section-heading{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);display:flex;align-items:center;gap:6px;}
-.section-textarea{border:none;outline:none;width:100%;font-family:inherit;font-size:.9rem;color:var(--text);background:transparent;resize:none;line-height:1.6;min-height:60px;}
+.section-textarea{border:none;outline:none;width:100%;font-family:inherit;font-size:.9rem;color:var(--text);background:transparent;resize:none;line-height:1.6;min-height:40px;height:auto;overflow:hidden;}
 .section-textarea::placeholder{color:var(--text3);}
 .section-textarea:focus{background:var(--surface2);border-radius:6px;padding:6px 8px;}
 
@@ -607,10 +607,20 @@ function renderDetail() {
     </div>
   </div>`;
 
-  // Close inline pickers on outside click
+  // Close inline pickers on outside click + auto-expand textareas
   setTimeout(()=>{
     overlay.addEventListener('click', e=>{
       if(!e.target.closest('.prop-value')) closeAllPickers();
+    });
+    document.querySelectorAll('.section-textarea').forEach(ta=>{
+      // expand to fit existing content
+      ta.style.height='auto';
+      ta.style.height=ta.scrollHeight+'px';
+      // expand on typing
+      ta.addEventListener('input',function(){
+        this.style.height='auto';
+        this.style.height=this.scrollHeight+'px';
+      });
     });
   },50);
 }
