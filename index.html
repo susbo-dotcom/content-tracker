@@ -5,128 +5,129 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boosted Content Tracker</title>
 <style>
+/* Estilos originales mantenidos */
 :root {
   --bg:#f7f7f5; --surface:#fff; --surface2:#f1f0ee; --border:#e3e2de; --border2:#d5d4cf;
   --text:#1a1a18; --text2:#787774; --text3:#aeaca8; --accent:#2383e2;
   --shadow:0 1px 3px rgba(0,0,0,.08); --shadow-md:0 4px 20px rgba(0,0,0,.12);
   --product-bg:#e9e4f7; --product-fg:#5b3fa6;
-  --money-bg:#d6eaf8;   --money-fg:#1a5d8f;
-  --modern-bg:#fdf0c2;  --modern-fg:#8a6a00;
-  --pda-bg:#e8e8e6;     --pda-fg:#4a4a48;
-  --icp-bg:#fce7f3;     --icp-fg:#9d174d;
+  --money-bg:#d6eaf8;  --money-fg:#1a5d8f;
+  --modern-bg:#fdf0c2; --modern-fg:#8a6a00;
+  --pda-bg:#e8e8e6;    --pda-fg:#4a4a48;
+  --icp-bg:#fce7f3;    --icp-fg:#9d174d;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','Segoe UI',sans-serif;min-height:100vh;}
+body{background:var(--bg); color:var(--text); font-family:-apple-system, 'Inter', 'Segoe UI', sans-serif; min-height:100vh;}
 
-/* HEADER & TOOLBAR */
-.page-header{padding:44px 48px 16px;}
-.page-title{font-size:2.2rem;font-weight:800;letter-spacing:-.5px;}
-.collab-bar{display:flex;align-items:center;gap:10px;margin-top:10px;}
-.collab-pill{font-size:.78rem;background:#e8f3fd;color:#2383e2;padding:4px 12px;border-radius:20px;border:1px solid #bdd8f7;font-weight:500;display:flex;align-items:center;gap:5px;}
-.online-dot{width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-
-.toolbar{display:flex;align-items:center;gap:8px;padding:12px 48px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
-.tab{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;font-size:.875rem;color:var(--text2);cursor:pointer;border:none;background:none;font-family:inherit;}
-.tab.active{background:var(--surface2);color:var(--text);font-weight:500;}
-.toolbar-right{margin-left:auto;display:flex;align-items:center;gap:8px;}
-.search-input{border:1px solid var(--border2);border-radius:6px;padding:6px 12px;font-size:.82rem;outline:none;width:200px;}
-.btn-new{background:var(--accent);color:white;border:none;border-radius:6px;padding:7px 16px;font-size:.875rem;font-weight:600;cursor:pointer;}
-
-/* BOARD */
-.board{display:flex;padding:20px 48px 60px;overflow-x:auto;align-items:flex-start;gap:14px;}
-.col{min-width:272px;width:272px;flex-shrink:0;}
-.col-header{display:flex;align-items:center;gap:8px;padding:2px 2px 12px;}
-.col-badge{font-size:.82rem;font-weight:600;padding:4px 14px;border-radius:20px;flex:1;}
-.col-count{font-size:.75rem;color:var(--text3);}
-
-.cards{display:flex;flex-direction:column;gap:8px;min-height:60px;border-radius:8px;}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:13px 14px 11px;cursor:pointer;box-shadow:var(--shadow);transition:box-shadow .15s;}
-.card:hover{box-shadow:var(--shadow-md); border-color:var(--border2);}
-.card-title-text{font-size:.875rem;font-weight:500;line-height:1.45;}
-.card-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
-.tag{font-size:.72rem;padding:2px 8px;border-radius:4px;font-weight:500;display:inline-block;}
-
-/* DETAIL PANEL */
-.detail-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;backdrop-filter:blur(2px);overflow-y:auto;}
-.detail-panel{background:var(--surface);border-radius:14px;width:100%;max-width:740px;box-shadow:0 24px 80px rgba(0,0,0,.2);position:relative;}
-.detail-title{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;border:none;outline:none;width:100%;padding:24px 48px 12px;background:transparent;}
-.detail-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text3);}
-
-/* BRIEF & TABLES */
-.section-rich-text {
-  border: 1px solid var(--border);
-  outline: none;
-  width: 100%;
-  min-height: 150px;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: .9rem;
-  line-height: 1.6;
-}
+/* Estilos de tabla para el Brief */
 .section-rich-text table {
   width: 100%;
   border-collapse: collapse;
   margin: 15px 0;
+  font-size: 0.85rem;
 }
 .section-rich-text th, .section-rich-text td {
   border: 1px solid var(--border2);
   padding: 10px;
-  text-align: left;
   vertical-align: top;
+  text-align: left;
 }
 .section-rich-text th { background: var(--surface2); font-weight: 700; }
 
+/* RE-ESTABLECIENDO ESTILOS DE TAGS Y COMPONENTES */
+.page-header{padding:44px 48px 16px;}
+.page-title{font-size:2.2rem; font-weight:800; letter-spacing:-.5px;}
+.collab-bar{display:flex; align-items:center; gap:10px; margin-top:10px;}
+.collab-pill{font-size:.78rem; background:#e8f3fd; color:#2383e2; padding:4px 12px; border-radius:20px; border:1px solid #bdd8f7; font-weight:500; display:flex; align-items:center; gap:5px;}
+.online-dot{width:7px; height:7px; background:#22c55e; border-radius:50%; animation:pulse 2s infinite;}
+@keyframes pulse{0%, 100%{opacity:1} 50%{opacity:.4}}
+.toolbar{display:flex; align-items:center; gap:8px; padding:12px 48px; border-bottom:1px solid var(--border); flex-wrap:wrap;}
+.tab{display:flex; align-items:center; gap:6px; padding:6px 14px; border-radius:6px; font-size:.875rem; color:var(--text2); cursor:pointer; border:none; background:none; font-family:inherit;}
+.tab.active{background:var(--surface2); color:var(--text); font-weight:500;}
+.sep{width:1px; height:20px; background:var(--border2); flex-shrink:0;}
+.toolbar-right{margin-left:auto; display:flex; align-items:center; gap:8px;}
+.search-wrap{position:relative;}
+.search-input{border:1px solid var(--border2); border-radius:6px; padding:6px 12px 6px 30px; font-size:.82rem; color:var(--text); background:var(--surface); outline:none; font-family:inherit; width:200px;}
+.btn-new{background:var(--accent); color:white; border:none; border-radius:6px; padding:7px 16px; font-size:.875rem; font-weight:600; cursor:pointer;}
+.filter-bar{display:flex; align-items:center; gap:8px; padding:10px 48px; background:var(--surface); border-bottom:1px solid var(--border); flex-wrap:wrap;}
+.board{display:flex; padding:20px 48px 60px; overflow-x:auto; align-items:flex-start; gap:14px;}
+.col{min-width:272px; width:272px; flex-shrink:0;}
+.col-header{display:flex; align-items:center; gap:8px; padding:2px 2px 12px;}
+.col-badge{font-size:.82rem; font-weight:600; padding:4px 14px; border-radius:20px; flex:1;}
+.cards{display:flex; flex-direction:column; gap:8px; min-height:60px; border-radius:8px; padding:2px;}
+.card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:13px 14px 11px; cursor:pointer; box-shadow:var(--shadow);}
+.card-tags{display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;}
+.tag{font-size:.72rem; padding:2px 9px; border-radius:5px; font-weight:500; display:inline-block;}
+
+/* COLORES DE STATUS Y TAGS */
+.s-backlog{background:#dbeafe; color:#1d4ed8;}
+.s-prioritize{background:#e5e7eb; color:#374151;}
+.s-designfb{background:#fef9c3; color:#854d0e;}
+.s-scheduled{background:#fed7aa; color:#9a3412;}
+.s-published{background:#dcfce7; color:#166534;}
+.t-product{background:var(--product-bg); color:var(--product-fg);}
+.t-money{background:var(--money-bg); color:var(--money-fg);}
+.t-modern{background:var(--modern-bg); color:var(--modern-fg);}
+.t-pda{background:var(--pda-bg); color:var(--pda-fg);}
+.t-plat{background:#f1f5f9; color:#475569;}
+.t-who{background:#f3f0ff; color:#5b3fa6;}
+.t-icp{background:var(--icp-bg); color:var(--icp-fg);}
+
+/* DETAIL PANEL */
+.detail-overlay{position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:300; display:flex; align-items:flex-start; justify-content:center; padding:40px 20px; backdrop-filter:blur(2px); overflow-y:auto;}
+.detail-panel{background:var(--surface); border-radius:14px; width:100%; max-width:740px; box-shadow:0 24px 80px rgba(0,0,0,.2); position:relative;}
+.section-rich-text { border: 1px solid transparent; outline: none; width: 100%; font-family: inherit; font-size: .9rem; color: var(--text); background: transparent; line-height: 1.6; min-height: 120px; padding: 12px; border-radius: 6px; }
+.section-rich-text:focus { background: var(--surface2); border: 1px solid var(--border); }
 .hidden{display:none!important;}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:white;border-radius:8px;padding:10px 20px;z-index:999;}
 </style>
 </head>
 <body>
-
 <div id="root"></div>
 <div id="detailOverlay" class="detail-overlay hidden" onclick="detailBgClose(event)"></div>
 
 <script>
-// --- CONFIGURACIÓN ---
 const STATUS = {
-  backlog:    {label:'Backlog',         cls:'s-backlog'},
-  prioritize: {label:'🔥 Prioritize',   cls:'s-prioritize'},
-  designfb:   {label:'Design feedback', cls:'s-designfb'},
-  scheduled:  {label:'Scheduled',       cls:'s-scheduled'},
-  published:  {label:'Published',       cls:'s-published'}
+  backlog:    {label:'Backlog',         cls:'s-backlog',    order:0},
+  prioritize: {label:'🔥 Prioritize',   cls:'s-prioritize', order:1},
+  designfb:   {label:'Design feedback', cls:'s-designfb',   order:2},
+  scheduled:  {label:'Scheduled',       cls:'s-scheduled',  order:3},
+  published:  {label:'Published',       cls:'s-published',  order:4},
+  archived:   {label:'Archived',        cls:'s-archived',   order:5},
 };
+const CHANNELS = ['Instagram','TikTok','Twitter/X','YouTube','LinkedIn','Facebook','Newsletter'];
+const PILAR_LIST = ['Product','Money talks','Modern investor','PdA'];
+const WHO_LIST = ['Distrito','SM Team','Creative Studio','Val'];
+const PILAR_TAG_CLS = {'Product':'t-product','Money talks':'t-money','Modern investor':'t-modern','PdA':'t-pda'};
+const PLAT_ICONS = {Instagram:'📸',TikTok:'🎵','Twitter/X':'🐦',YouTube:'▶️',LinkedIn:'💼',Facebook:'📘',Newsletter:'📧'};
 
 let cards = [];
 let searchQ = '';
+let AF = {channel:[], who:[], pilar:[], serie:[]};
 
-// --- CARGA Y GUARDADO ---
-function persist() { localStorage.setItem('bct_v3_final', JSON.stringify(cards)); }
-function load() {
-  const data = localStorage.getItem('bct_v3_final');
-  cards = data ? JSON.parse(data) : [];
+async function persist() { try { await window.storage.set('bct6', JSON.stringify(cards), true); } catch(e){} }
+async function load() {
+  try { const r = await window.storage.get('bct6', true); if(r) cards=JSON.parse(r.value); }
+  catch(e) { console.error("Error cargando memoria", e); }
   render();
 }
 
-// --- RENDERIZADO DEL TABLERO ---
 function render() {
   const vis = cards.filter(c => {
     const q = searchQ.toLowerCase();
     return c.title.toLowerCase().includes(q) || (c.brief || '').toLowerCase().includes(q);
   });
 
-  // ORDENAR POR FECHA
+  // MEJORA: ORDEN CRONOLÓGICO (Más próximos arriba)
   vis.sort((a, b) => {
     if (!a.date) return 1;
     if (!b.date) return -1;
-    return new Date(a.date) - new Date(b.date);
+    return new Date(a.date + 'T00:00:00') - new Date(b.date + 'T00:00:00');
   });
 
   document.getElementById('root').innerHTML = `
     <div class="page-header">
       <div class="page-title">Boosted Content Tracker</div>
-      <div class="collab-bar">
-        <span class="collab-pill"><span class="online-dot"></span> Tablero Activo · ${cards.length} piezas</span>
-      </div>
+      <div class="collab-bar"><span class="collab-pill"><span class="online-dot"></span> Tablero Activo · ${cards.length} piezas</span></div>
     </div>
     <div class="toolbar">
       <button class="tab active">⊞ Pipeline</button>
@@ -140,32 +141,39 @@ function render() {
         <div class="col">
           <div class="col-header">
             <span class="col-badge ${STATUS[sk].cls}">${STATUS[sk].label}</span>
-            <span class="col-count">${vis.filter(c=>c.status===sk).length}</span>
+            <span style="font-size:12px; color:var(--text3);">${vis.filter(c=>c.status===sk).length}</span>
           </div>
           <div class="cards">
-            ${vis.filter(c => c.status === sk).map(c => `
-              <div class="card" onclick="openDetail('${c.id}')">
-                <div class="card-title-text">${c.title || 'Sin título'}</div>
-                <div class="card-tags">
-                  ${c.date ? `<span class="tag" style="background:#eee">📅 ${c.date}</span>` : ''}
-                </div>
-              </div>
-            `).join('')}
+            ${vis.filter(c => c.status === sk).map(c => renderCard(c)).join('')}
           </div>
         </div>
       `).join('')}
-    </div>
-  `;
+    </div>`;
 }
 
-// --- DETALLE ---
+function renderCard(c) {
+  const chTags = (c.channels || []).map(ch => `<span class="tag t-plat">${PLAT_ICONS[ch]||''} ${ch}</span>`).join('');
+  const pilarTags = (c.pilar || []).map(p => `<span class="tag ${PILAR_TAG_CLS[p]||''}">${p}</span>`).join('');
+  return `
+    <div class="card" onclick="openDetail('${c.id}')">
+      <div class="card-title-text">${c.title || 'Sin título'}</div>
+      <div class="card-tags">
+        ${chTags}${pilarTags}
+        ${c.date ? `<span class="tag" style="background:#eee">📅 ${c.date}</span>` : ''}
+      </div>
+    </div>`;
+}
+
 let detailCard = null;
+let currentDetailId = null;
 
 function openDetail(id) {
   if(id) {
     detailCard = JSON.parse(JSON.stringify(cards.find(c => c.id === id)));
+    currentDetailId = id;
   } else {
-    detailCard = { id:'c'+Date.now(), title:'', status:'backlog', brief:'', date:'' };
+    detailCard = { id:'c'+Date.now(), title:'', status:'backlog', brief:'', date:'', channels:[], pilar:[], who:[] };
+    currentDetailId = null;
   }
   document.body.style.overflow = 'hidden';
   document.getElementById('detailOverlay').classList.remove('hidden');
@@ -176,60 +184,58 @@ function renderDetail() {
   const c = detailCard;
   document.getElementById('detailOverlay').innerHTML = `
     <div class="detail-panel">
-      <button class="detail-close" onclick="closeDetail()">✕</button>
-      <input class="detail-title" value="${c.title}" oninput="detailCard.title=this.value" placeholder="Título del contenido...">
-      
+      <button onclick="closeDetail()" style="position:absolute; top:16px; right:16px; border:none; background:none; cursor:pointer; font-size:20px;">✕</button>
+      <input class="detail-title" value="${c.title}" oninput="detailCard.title=this.value" placeholder="Título...">
       <div style="padding:0 48px 20px; display:flex; gap:20px;">
-        <div>
-          <label style="font-size:12px; color:var(--text3);">Fecha Pub.</label><br>
-          <input type="date" value="${c.date || ''}" onchange="detailCard.date=this.value">
-        </div>
-        <div>
-          <label style="font-size:12px; color:var(--text3);">Status</label><br>
+        <div><label style="font-size:12px; color:var(--text3);">Fecha Pub.</label><br><input type="date" value="${c.date || ''}" onchange="detailCard.date=this.value"></div>
+        <div><label style="font-size:12px; color:var(--text3);">Status</label><br>
           <select onchange="detailCard.status=this.value">
             ${Object.entries(STATUS).map(([k,v]) => `<option value="${k}" ${c.status===k?'selected':''}>${v.label}</option>`).join('')}
           </select>
         </div>
       </div>
-
       <div style="padding:0 48px 40px">
-        <div style="margin-bottom:10px; display:flex; justify-content:space-between;">
-          <span style="font-size:12px; font-weight:700;">📝 BRIEF & SCRIPT</span>
-          <button onclick="insertTable()" style="font-size:10px; cursor:pointer;">+ Insertar Tabla</button>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <span style="font-size:12px; font-weight:700; color:var(--text3);">📝 BRIEF & SCRIPT</span>
+          <button onclick="insertTable()" style="font-size:10px; padding:2px 8px; cursor:pointer; border-radius:4px; border:1px solid var(--border2); background:white;">+ Insertar Tabla Script</button>
         </div>
         <div id="briefEditor" class="section-rich-text" contenteditable="true">${c.brief || ''}</div>
-        
-        <div style="margin-top:20px; display:flex; justify-content:flex-end; gap:10px;">
-          ${idExists(c.id) ? `<button onclick="deleteCard('${c.id}')" style="margin-right:auto; color:red; border:none; background:none; cursor:pointer;">Eliminar</button>` : ''}
+        <div style="margin-top:30px; display:flex; gap:8px; justify-content: flex-end;">
+          ${currentDetailId ? `<button onclick="deleteCard()" style="margin-right:auto; color:red; border:none; background:none; cursor:pointer;">Eliminar</button>` : ''}
           <button onclick="closeDetail()">Cancelar</button>
-          <button onclick="saveDetail()" style="background:var(--accent); color:white; border:none; padding:8px 20px; border-radius:6px; cursor:pointer;">Guardar</button>
+          <button onclick="saveDetail()" style="background:var(--accent); color:white; border:none; padding:8px 24px; border-radius:8px; font-weight:600; cursor:pointer;">Guardar</button>
         </div>
       </div>
-    </div>
-  `;
+    </div>`;
 }
 
 function insertTable() {
-  const table = `<table><thead><tr><th>Visual</th><th>Audio (Locución)</th></tr></thead><tbody><tr><td>...</td><td>...</td></tr></tbody></table><br>`;
-  document.getElementById('briefEditor').focus();
-  document.execCommand('insertHTML', false, table);
+  const tableHTML = `<table><thead><tr><th>Visual</th><th>Audio (Locución)</th></tr></thead><tbody><tr><td>...</td><td>...</td></tr></tbody></table><br>`;
+  const editor = document.getElementById('briefEditor');
+  editor.focus();
+  document.execCommand('insertHTML', false, tableHTML);
 }
 
 function saveDetail() {
-  detailCard.brief = document.getElementById('briefEditor').innerHTML;
-  const idx = cards.findIndex(c => c.id === detailCard.id);
-  if(idx > -1) cards[idx] = detailCard;
-  else cards.push(detailCard);
+  const editor = document.getElementById('briefEditor');
+  if (editor) detailCard.brief = editor.innerHTML;
+  if(currentDetailId) {
+    const idx = cards.findIndex(c => c.id === currentDetailId);
+    cards[idx] = detailCard;
+  } else {
+    cards.push(detailCard);
+  }
   persist(); closeDetail(); render();
 }
 
-function deleteCard(id) {
-  if(confirm('¿Eliminar?')) { cards = cards.filter(c => c.id !== id); persist(); closeDetail(); render(); }
+function deleteCard() {
+  if(!confirm("¿Eliminar?")) return;
+  cards = cards.filter(c => c.id !== currentDetailId);
+  persist(); closeDetail(); render();
 }
 
 function closeDetail() { document.getElementById('detailOverlay').classList.add('hidden'); document.body.style.overflow = 'auto'; }
 function detailBgClose(e) { if(e.target.id === 'detailOverlay') closeDetail(); }
-function idExists(id) { return cards.some(c => c.id === id); }
 
 load();
 </script>
