@@ -15,66 +15,104 @@
     --text2: #787774;
     --text3: #aeaca8;
     --accent: #2383e2;
-    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 16px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.06);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Inter', 'Segoe UI', sans-serif; min-height: 100vh; }
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
 
-  .page-header { padding: 48px 48px 20px; }
-  .page-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; }
-  .collab-bar { display: flex; align-items: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
-  .collab-pill { font-size: 0.78rem; background: #e8f3fd; color: #2383e2; padding: 4px 12px; border-radius: 20px; border: 1px solid #bdd8f7; font-weight: 500; display: flex; align-items: center; gap: 5px; }
-  .online-dot { width: 7px; height: 7px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    /* PILAR COLORS — exact from screenshot */
+    --product-bg: #e9e4f7; --product-fg: #5b3fa6;
+    --money-bg:   #d6eaf8; --money-fg:   #1a5d8f;
+    --modern-bg:  #fdf0c2; --modern-fg:  #8a6a00;
+    --pda-bg:     #e8e8e6; --pda-fg:     #4a4a48;
+
+    /* SERIE — inherit from parent pilar */
+    --serie-product-bg: #ede9fa; --serie-product-fg: #5b3fa6;
+    --serie-money-bg:   #daeef8; --serie-money-fg:   #1a5d8f;
+    --serie-modern-bg:  #fef3cc; --serie-modern-fg:  #8a6a00;
+    --serie-pda-bg:     #ebebea; --serie-pda-fg:     #4a4a48;
+
+    /* ICP */
+    --icp-bg: #fce7f3; --icp-fg: #9d174d;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,'Inter','Segoe UI',sans-serif; min-height:100vh; }
+
+  /* PAGE */
+  .page-header { padding:44px 48px 18px; }
+  .page-title { font-size:2.2rem; font-weight:800; letter-spacing:-0.5px; }
+  .collab-bar { display:flex; align-items:center; gap:10px; margin-top:10px; }
+  .collab-pill { font-size:0.78rem; background:#e8f3fd; color:#2383e2; padding:4px 12px; border-radius:20px; border:1px solid #bdd8f7; font-weight:500; display:flex; align-items:center; gap:5px; }
+  .online-dot { width:7px; height:7px; background:#22c55e; border-radius:50%; animation:pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
   /* TOOLBAR */
-  .toolbar { display: flex; align-items: center; gap: 8px; padding: 14px 48px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
-  .tab { display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 6px; font-size: 0.875rem; color: var(--text2); cursor: pointer; border: none; background: none; font-family: inherit; transition: background 0.15s; }
-  .tab:hover { background: var(--surface2); }
-  .tab.active { background: var(--surface2); color: var(--text); font-weight: 500; }
-  .sep { width: 1px; height: 20px; background: var(--border2); flex-shrink: 0; }
-  .toolbar-right { margin-left: auto; display: flex; align-items: center; gap: 6px; }
-  .search-input { border: 1px solid var(--border2); border-radius: 6px; padding: 6px 12px 6px 32px; font-size: 0.82rem; color: var(--text); background: var(--surface); outline: none; font-family: inherit; width: 200px; }
-  .search-input:focus { border-color: var(--accent); }
-  .search-input::placeholder { color: var(--text3); }
-  .search-wrap { position: relative; }
-  .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text3); font-size: 13px; pointer-events: none; }
-  .btn-new { background: var(--accent); color: white; border: none; border-radius: 6px; padding: 7px 16px; font-size: 0.875rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.15s; }
-  .btn-new:hover { background: #1a6fc4; }
+  .toolbar { display:flex; align-items:center; gap:8px; padding:12px 48px; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+  .tab { display:flex; align-items:center; gap:6px; padding:6px 14px; border-radius:6px; font-size:.875rem; color:var(--text2); cursor:pointer; border:none; background:none; font-family:inherit; transition:background .15s; }
+  .tab:hover { background:var(--surface2); }
+  .tab.active { background:var(--surface2); color:var(--text); font-weight:500; }
+  .sep { width:1px; height:20px; background:var(--border2); flex-shrink:0; }
+  .toolbar-right { margin-left:auto; display:flex; align-items:center; gap:6px; }
+  .search-wrap { position:relative; }
+  .search-icon { position:absolute; left:10px; top:50%; transform:translateY(-50%); color:var(--text3); font-size:13px; pointer-events:none; }
+  .search-input { border:1px solid var(--border2); border-radius:6px; padding:6px 12px 6px 30px; font-size:.82rem; color:var(--text); background:var(--surface); outline:none; font-family:inherit; width:200px; }
+  .search-input:focus { border-color:var(--accent); }
+  .search-input::placeholder { color:var(--text3); }
+  .btn-new { background:var(--accent); color:white; border:none; border-radius:6px; padding:7px 16px; font-size:.875rem; font-weight:600; cursor:pointer; font-family:inherit; transition:background .15s; }
+  .btn-new:hover { background:#1a6fc4; }
 
   /* FILTER BAR */
-  .filter-bar { display: flex; align-items: center; gap: 6px; padding: 10px 48px; background: var(--surface); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
-  .filter-label { font-size: 0.72rem; color: var(--text3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap; margin-right: 2px; }
-  .filter-chip { font-size: 0.78rem; padding: 3px 10px; border-radius: 20px; cursor: pointer; border: 1px solid var(--border2); background: var(--surface); color: var(--text2); transition: all 0.12s; white-space: nowrap; font-weight: 500; }
-  .filter-chip:hover { border-color: var(--text3); color: var(--text); }
-  .filter-chip.on { background: var(--text); color: white; border-color: var(--text); }
-  .fsep { width: 1px; height: 16px; background: var(--border); flex-shrink: 0; }
-  .clear-btn { font-size: 0.78rem; color: #e03e3e; cursor: pointer; background: none; border: none; font-family: inherit; font-weight: 600; padding: 3px 6px; }
-  .clear-btn:hover { text-decoration: underline; }
+  .filter-bar { display:flex; align-items:center; gap:6px; padding:10px 48px; background:var(--surface); border-bottom:1px solid var(--border); flex-wrap:wrap; }
+  .flabel { font-size:.72rem; color:var(--text3); font-weight:700; text-transform:uppercase; letter-spacing:.4px; white-space:nowrap; }
+  .fc { font-size:.78rem; padding:3px 10px; border-radius:20px; cursor:pointer; border:1px solid var(--border2); background:var(--surface); color:var(--text2); transition:all .12s; white-space:nowrap; font-weight:500; }
+  .fc:hover { border-color:var(--text3); color:var(--text); }
+  .fc.on { background:var(--text); color:white; border-color:var(--text); }
+  .fsep { width:1px; height:16px; background:var(--border); flex-shrink:0; }
+  .clear-btn { font-size:.78rem; color:#e03e3e; cursor:pointer; background:none; border:none; font-family:inherit; font-weight:600; padding:3px 6px; }
+  .clear-btn:hover { text-decoration:underline; }
 
   /* BOARD */
-  .board { display: flex; padding: 20px 48px 60px; overflow-x: auto; align-items: flex-start; gap: 14px; }
-  .col { min-width: 272px; width: 272px; flex-shrink: 0; }
-  .col-header { display: flex; align-items: center; gap: 8px; padding: 2px 2px 12px; }
-  .col-badge { font-size: 0.82rem; font-weight: 600; padding: 4px 14px; border-radius: 20px; flex: 1; }
-  .col-count { font-size: 0.75rem; color: var(--text3); }
-  .col-addbtn { background: none; border: none; color: var(--text3); cursor: pointer; font-size: 17px; padding: 0 4px; border-radius: 4px; line-height: 1; }
-  .col-addbtn:hover { background: var(--surface2); color: var(--text2); }
-  .cards { display: flex; flex-direction: column; gap: 8px; min-height: 20px; }
+  .board { display:flex; padding:20px 48px 60px; overflow-x:auto; align-items:flex-start; gap:14px; }
 
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 13px 14px 11px; cursor: pointer; transition: box-shadow 0.15s, border-color 0.15s; box-shadow: var(--shadow); }
-  .card:hover { box-shadow: var(--shadow-md); border-color: var(--border2); }
-  .card-top { display: flex; align-items: flex-start; gap: 7px; margin-bottom: 9px; }
-  .card-icon { color: var(--text3); font-size: 12px; margin-top: 2px; flex-shrink: 0; }
-  .card-title { font-size: 0.875rem; font-weight: 500; line-height: 1.45; }
-  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-  .tag { font-size: 0.72rem; padding: 2px 9px; border-radius: 5px; font-weight: 500; }
-  .card-footer { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
-  .cmeta { font-size: 0.71rem; color: var(--text3); }
+  /* COLUMN */
+  .col { min-width:272px; width:272px; flex-shrink:0; }
+  .col-header { display:flex; align-items:center; gap:8px; padding:2px 2px 12px; }
+  .col-badge { font-size:.82rem; font-weight:600; padding:4px 14px; border-radius:20px; flex:1; }
+  .col-count { font-size:.75rem; color:var(--text3); }
+  .col-addbtn { background:none; border:none; color:var(--text3); cursor:pointer; font-size:17px; padding:0 4px; border-radius:4px; line-height:1; }
+  .col-addbtn:hover { background:var(--surface2); color:var(--text2); }
 
-  .add-card-btn { display: flex; align-items: center; gap: 5px; padding: 7px 4px; border: none; background: none; color: var(--text3); font-size: 0.84rem; cursor: pointer; border-radius: 6px; width: 100%; font-family: inherit; margin-top: 4px; transition: all 0.12s; }
-  .add-card-btn:hover { color: var(--text2); background: var(--surface2); }
+  /* CARDS CONTAINER — drag target */
+  .cards { display:flex; flex-direction:column; gap:8px; min-height:60px; border-radius:8px; transition:background .15s; padding:2px; }
+  .cards.drag-over { background:rgba(35,131,226,.07); outline:2px dashed rgba(35,131,226,.3); }
+
+  /* CARD */
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:13px 14px 11px; cursor:grab; transition:box-shadow .15s,border-color .15s,opacity .15s; box-shadow:var(--shadow); user-select:none; }
+  .card:hover { box-shadow:var(--shadow-md); border-color:var(--border2); }
+  .card.dragging { opacity:.4; cursor:grabbing; }
+  .card.drag-placeholder { background:rgba(35,131,226,.06); border:2px dashed rgba(35,131,226,.3); border-radius:10px; height:60px; }
+  .card-top { display:flex; align-items:flex-start; gap:7px; margin-bottom:9px; }
+  .card-icon { color:var(--text3); font-size:12px; margin-top:2px; flex-shrink:0; }
+  .card-title { font-size:.875rem; font-weight:500; line-height:1.45; }
+  .card-tags { display:flex; flex-wrap:wrap; gap:4px; }
+  .tag { font-size:.72rem; padding:2px 9px; border-radius:5px; font-weight:500; }
+  .card-footer { display:flex; align-items:center; gap:8px; margin-top:8px; flex-wrap:wrap; }
+  .cmeta { font-size:.71rem; color:var(--text3); }
+
+  /* TAG COLORS */
+  .t-product  { background:var(--product-bg); color:var(--product-fg); }
+  .t-money    { background:var(--money-bg);   color:var(--money-fg); }
+  .t-modern   { background:var(--modern-bg);  color:var(--modern-fg); }
+  .t-pda      { background:var(--pda-bg);     color:var(--pda-fg); }
+  /* Serie inherits pilar color */
+  .t-sr-product { background:var(--serie-product-bg); color:var(--serie-product-fg); }
+  .t-sr-money   { background:var(--serie-money-bg);   color:var(--serie-money-fg); }
+  .t-sr-modern  { background:var(--serie-modern-bg);  color:var(--serie-modern-fg); }
+  .t-sr-pda     { background:var(--serie-pda-bg);     color:var(--serie-pda-fg); }
+  /* Platform */
+  .t-plat { background:#f1f5f9; color:#475569; }
+  /* Who */
+  .t-who { background:#f3f0ff; color:#5b3fa6; }
+  /* ICP */
+  .t-icp { background:var(--icp-bg); color:var(--icp-fg); }
 
   /* STATUS COLORS */
   .s-backlog    { background:#dbeafe; color:#1d4ed8; }
@@ -84,73 +122,72 @@
   .s-published  { background:#dcfce7; color:#166534; }
   .s-archived   { background:#ede9fe; color:#5b21b6; }
 
-  /* PILAR COLORS */
-  .p-product  { background:#dbeafe; color:#1e40af; }
-  .p-money    { background:#fef9c3; color:#92400e; }
-  .p-modern   { background:#dcfce7; color:#065f46; }
-  .p-pda      { background:#fce7f3; color:#9d174d; }
-
-  /* SERIE COLORS */
-  .sr-guides  { background:#e0f2fe; color:#075985; }
-  .sr-value   { background:#f0fdf4; color:#14532d; }
-  .sr-safety  { background:#fff7ed; color:#9a3412; }
-  .sr-strats  { background:#faf5ff; color:#581c87; }
-  .sr-market  { background:#f1f5f9; color:#334155; }
-  .sr-mindset { background:#fdf4ff; color:#701a75; }
-  .sr-pop     { background:#fff1f2; color:#9f1239; }
-  .sr-life    { background:#ecfdf5; color:#064e3b; }
-
-  /* WHO COLORS */
-  .w-distrito { background:#eff6ff; color:#1e40af; }
-  .w-sm       { background:#fefce8; color:#713f12; }
-  .w-creative { background:#fdf4ff; color:#7e22ce; }
-  .w-val      { background:#f0fdf4; color:#166534; }
-
-  /* PLATFORM TAGS */
-  .pt { background:#f1f5f9; color:#475569; }
+  .add-card-btn { display:flex; align-items:center; gap:5px; padding:7px 4px; border:none; background:none; color:var(--text3); font-size:.84rem; cursor:pointer; border-radius:6px; width:100%; font-family:inherit; margin-top:4px; transition:all .12s; }
+  .add-card-btn:hover { color:var(--text2); background:var(--surface2); }
 
   /* MODAL */
-  .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(2px); }
-  .modal { background:var(--surface);border-radius:14px;width:100%;max-width:580px;max-height:92vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.18); }
-  .modal-header { display:flex;align-items:center;justify-content:space-between;padding:20px 24px 14px;border-bottom:1px solid var(--border); }
-  .modal-title { font-size:1rem;font-weight:700; }
-  .modal-close { background:none;border:none;color:var(--text3);font-size:18px;cursor:pointer;width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center; }
+  .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.35); z-index:200; display:flex; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(2px); }
+  .modal { background:var(--surface); border-radius:14px; width:100%; max-width:600px; max-height:92vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,.18); }
+  .modal-header { display:flex; align-items:center; justify-content:space-between; padding:20px 24px 14px; border-bottom:1px solid var(--border); }
+  .modal-title { font-size:1rem; font-weight:700; }
+  .modal-close { background:none; border:none; color:var(--text3); font-size:18px; cursor:pointer; width:28px; height:28px; border-radius:6px; display:flex; align-items:center; justify-content:center; }
   .modal-close:hover { background:var(--surface2); }
-  .modal-body { padding:18px 24px;display:flex;flex-direction:column;gap:15px; }
-  .modal-footer { padding:14px 24px;border-top:1px solid var(--border);display:flex;gap:8px;justify-content:flex-end;align-items:center; }
-  .fg { display:flex;flex-direction:column;gap:6px; }
-  .flabel { font-size:0.73rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:0.4px; }
-  .fi { background:var(--bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font-size:0.88rem;outline:none;transition:border .15s,background .15s;font-family:inherit; }
-  .fi:focus { border-color:var(--accent);background:white; }
+  .modal-body { padding:18px 24px; display:flex; flex-direction:column; gap:15px; }
+  .modal-footer { padding:14px 24px; border-top:1px solid var(--border); display:flex; gap:8px; justify-content:flex-end; align-items:center; }
+  .fg { display:flex; flex-direction:column; gap:6px; }
+  .flbl { font-size:.73rem; color:var(--text2); font-weight:700; text-transform:uppercase; letter-spacing:.4px; }
+  .fi { background:var(--bg); border:1px solid var(--border2); border-radius:8px; padding:9px 12px; color:var(--text); font-size:.88rem; outline:none; transition:border .15s,background .15s; font-family:inherit; }
+  .fi:focus { border-color:var(--accent); background:white; }
   textarea.fi { resize:vertical; }
-  .frow { display:grid;grid-template-columns:1fr 1fr;gap:12px; }
+  .frow { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 
-  .pick-opts { display:flex;flex-wrap:wrap;gap:5px; }
-  .pick-opt { font-size:0.78rem;padding:5px 12px;border-radius:8px;cursor:pointer;border:1px solid var(--border2);background:var(--surface);color:var(--text2);transition:all .12s;font-weight:500; }
-  .pick-opt:hover { border-color:var(--text3);color:var(--text); }
-  .pick-opt.sel { background:var(--text);color:white;border-color:var(--text); }
+  .pick-opts { display:flex; flex-wrap:wrap; gap:5px; }
+  .pick-opt { font-size:.78rem; padding:5px 12px; border-radius:8px; cursor:pointer; border:1px solid var(--border2); background:var(--surface); color:var(--text2); transition:all .12s; font-weight:500; }
+  .pick-opt:hover { border-color:var(--text3); color:var(--text); }
+  .pick-opt.sel { background:var(--text); color:white; border-color:var(--text); }
 
-  .tag-opts { display:flex;flex-wrap:wrap;gap:5px; }
-  .tag-opt { font-size:0.78rem;padding:4px 12px;border-radius:20px;cursor:pointer;border:1.5px solid transparent;font-weight:500;transition:all .12s;opacity:0.75; }
-  .tag-opt:hover { opacity:1;transform:translateY(-1px); }
-  .tag-opt.sel { opacity:1;border-color:rgba(0,0,0,0.18);box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+  /* PILAR OPTS — colored */
+  .po-product { background:var(--product-bg); color:var(--product-fg); border-color:transparent; }
+  .po-product.sel { box-shadow:0 0 0 2px var(--product-fg); border-color:var(--product-fg); }
+  .po-money   { background:var(--money-bg);   color:var(--money-fg);   border-color:transparent; }
+  .po-money.sel   { box-shadow:0 0 0 2px var(--money-fg);   border-color:var(--money-fg); }
+  .po-modern  { background:var(--modern-bg);  color:var(--modern-fg);  border-color:transparent; }
+  .po-modern.sel  { box-shadow:0 0 0 2px var(--modern-fg);  border-color:var(--modern-fg); }
+  .po-pda     { background:var(--pda-bg);     color:var(--pda-fg);     border-color:transparent; }
+  .po-pda.sel     { box-shadow:0 0 0 2px var(--pda-fg);     border-color:var(--pda-fg); }
 
-  .btn { border:none;border-radius:8px;padding:8px 16px;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all .15s;font-family:inherit; }
-  .btn-primary { background:var(--text);color:white; }
+  .tag-opts { display:flex; flex-wrap:wrap; gap:5px; }
+  .tag-opt { font-size:.78rem; padding:4px 12px; border-radius:20px; cursor:pointer; border:1.5px solid transparent; font-weight:500; transition:all .12s; opacity:.75; }
+  .tag-opt:hover { opacity:1; }
+  .tag-opt.sel { opacity:1; border-color:rgba(0,0,0,.2); box-shadow:0 2px 6px rgba(0,0,0,.1); }
+  /* serie opts colored per pilar */
+  .so-product { background:var(--serie-product-bg); color:var(--serie-product-fg); }
+  .so-money   { background:var(--serie-money-bg);   color:var(--serie-money-fg); }
+  .so-modern  { background:var(--serie-modern-bg);  color:var(--serie-modern-fg); }
+  .so-pda     { background:var(--serie-pda-bg);     color:var(--serie-pda-fg); }
+
+  /* ICP OPTS */
+  .icp-opts { display:flex; flex-wrap:wrap; gap:5px; }
+  .icp-opt { font-size:.78rem; padding:4px 12px; border-radius:20px; cursor:pointer; background:var(--icp-bg); color:var(--icp-fg); border:1.5px solid transparent; font-weight:500; transition:all .12s; opacity:.7; }
+  .icp-opt:hover { opacity:1; }
+  .icp-opt.sel { opacity:1; border-color:var(--icp-fg); box-shadow:0 2px 6px rgba(0,0,0,.1); }
+
+  .btn { border:none; border-radius:8px; padding:8px 16px; font-size:.875rem; font-weight:600; cursor:pointer; transition:all .15s; font-family:inherit; }
+  .btn-primary { background:var(--text); color:white; }
   .btn-primary:hover { background:#333; }
-  .btn-ghost { background:none;color:var(--text2);border:1px solid var(--border2); }
+  .btn-ghost { background:none; color:var(--text2); border:1px solid var(--border2); }
   .btn-ghost:hover { background:var(--surface2); }
-  .btn-del { background:none;color:#e03e3e;border:none;font-size:0.82rem;margin-right:auto; }
+  .btn-del { background:none; color:#e03e3e; border:none; font-size:.82rem; margin-right:auto; }
   .btn-del:hover { text-decoration:underline; }
 
   .hidden { display:none !important; }
-  .toast { position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:white;border-radius:8px;padding:10px 20px;font-size:0.84rem;z-index:999;white-space:nowrap;box-shadow:var(--shadow-md);animation:fadeUp .2s ease; }
+  .toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:var(--text); color:white; border-radius:8px; padding:10px 20px; font-size:.84rem; z-index:999; white-space:nowrap; box-shadow:var(--shadow-md); animation:fadeUp .2s ease; }
   @keyframes fadeUp { from{opacity:0;transform:translate(-50%,8px)} to{opacity:1;transform:translate(-50%,0)} }
-  .loading { display:flex;align-items:center;justify-content:center;padding:100px;gap:10px;color:var(--text2); }
-  .spinner { width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite; }
+  .loading { display:flex; align-items:center; justify-content:center; padding:100px; gap:10px; color:var(--text2); }
+  .spinner { width:18px; height:18px; border:2px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin .6s linear infinite; }
   @keyframes spin { to{transform:rotate(360deg)} }
-  ::-webkit-scrollbar { width:5px;height:5px; }
-  ::-webkit-scrollbar-thumb { background:var(--border2);border-radius:3px; }
+  ::-webkit-scrollbar { width:5px; height:5px; }
+  ::-webkit-scrollbar-thumb { background:var(--border2); border-radius:3px; }
   @media(max-width:640px){
     .page-header,.toolbar,.filter-bar,.board{padding-left:16px;padding-right:16px;}
     .page-title{font-size:1.5rem;}
@@ -168,13 +205,15 @@
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
+
       <div class="fg">
-        <label class="flabel">Título *</label>
+        <label class="flbl">Título *</label>
         <input type="text" class="fi" id="fTitle" placeholder="Nombre del contenido...">
       </div>
+
       <div class="frow">
         <div class="fg">
-          <label class="flabel">Status</label>
+          <label class="flbl">Status</label>
           <select class="fi" id="fStatus">
             <option value="backlog">Backlog</option>
             <option value="prioritize">🔥 Prioritize</option>
@@ -185,13 +224,13 @@
           </select>
         </div>
         <div class="fg">
-          <label class="flabel">Fecha objetivo</label>
+          <label class="flbl">Fecha objetivo</label>
           <input type="date" class="fi" id="fDate">
         </div>
       </div>
 
       <div class="fg">
-        <label class="flabel">Who produces</label>
+        <label class="flbl">Who produces</label>
         <div class="pick-opts" id="whoOpts">
           <div class="pick-opt" data-v="Distrito" onclick="toggleOne(this,'whoOpts')">Distrito</div>
           <div class="pick-opt" data-v="SM Team" onclick="toggleOne(this,'whoOpts')">SM Team</div>
@@ -201,7 +240,7 @@
       </div>
 
       <div class="fg">
-        <label class="flabel">Plataformas</label>
+        <label class="flbl">Plataformas</label>
         <div class="pick-opts" id="platOpts">
           <div class="pick-opt" data-v="Instagram" onclick="toggleMulti(this)">📸 Instagram</div>
           <div class="pick-opt" data-v="TikTok" onclick="toggleMulti(this)">🎵 TikTok</div>
@@ -214,37 +253,39 @@
       </div>
 
       <div class="fg">
-        <label class="flabel">Pilar</label>
+        <label class="flbl">Pilar</label>
         <div class="tag-opts" id="pilarOpts">
-          <div class="tag-opt p-product" data-v="Product" onclick="toggleMulti(this)">Product</div>
-          <div class="tag-opt p-money" data-v="Money talks" onclick="toggleMulti(this)">Money talks</div>
-          <div class="tag-opt p-modern" data-v="Modern investor" onclick="toggleMulti(this)">Modern investor</div>
-          <div class="tag-opt p-pda" data-v="PdA" onclick="toggleMulti(this)">PdA</div>
+          <div class="tag-opt po-product" data-v="Product" onclick="toggleOne(this,'pilarOpts');syncSeries()">Product</div>
+          <div class="tag-opt po-money"   data-v="Money talks" onclick="toggleOne(this,'pilarOpts');syncSeries()">Money talks</div>
+          <div class="tag-opt po-modern"  data-v="Modern investor" onclick="toggleOne(this,'pilarOpts');syncSeries()">Modern investor</div>
+          <div class="tag-opt po-pda"     data-v="PdA" onclick="toggleOne(this,'pilarOpts');syncSeries()">PdA</div>
         </div>
       </div>
 
-      <div class="fg">
-        <label class="flabel">Serie</label>
+      <div class="fg" id="serieGroup">
+        <label class="flbl">Serie</label>
         <div class="tag-opts" id="serieOpts">
-          <div class="tag-opt sr-guides"  data-v="Guides"          onclick="toggleMulti(this)">Guides</div>
-          <div class="tag-opt sr-value"   data-v="Value prop"      onclick="toggleMulti(this)">Value prop</div>
-          <div class="tag-opt sr-safety"  data-v="Safety"          onclick="toggleMulti(this)">Safety</div>
-          <div class="tag-opt sr-strats"  data-v="Strategies"      onclick="toggleMulti(this)">Strategies</div>
-          <div class="tag-opt sr-market"  data-v="Market analysis" onclick="toggleMulti(this)">Market analysis</div>
-          <div class="tag-opt sr-mindset" data-v="Mindset"         onclick="toggleMulti(this)">Mindset</div>
-          <div class="tag-opt sr-pop"     data-v="Pop culture"     onclick="toggleMulti(this)">Pop culture</div>
-          <div class="tag-opt sr-life"    data-v="Lifestyle"       onclick="toggleMulti(this)">Lifestyle</div>
+          <!-- populated dynamically by syncSeries() -->
         </div>
       </div>
 
       <div class="fg">
-        <label class="flabel">Notas / Brief</label>
+        <label class="flbl">ICP</label>
+        <div class="icp-opts" id="icpOpts">
+          <div class="icp-opt" data-v="Affluent" onclick="toggleMulti(this)">Affluent</div>
+          <div class="icp-opt" data-v="HNWI" onclick="toggleMulti(this)">HNWI</div>
+        </div>
+      </div>
+
+      <div class="fg">
+        <label class="flbl">Notas / Brief</label>
         <textarea class="fi" id="fNotes" rows="2" placeholder="Referencias, keywords, brief..."></textarea>
       </div>
       <div class="fg">
-        <label class="flabel">URL publicado</label>
+        <label class="flbl">URL publicado</label>
         <input type="url" class="fi" id="fUrl" placeholder="https://...">
       </div>
+
     </div>
     <div class="modal-footer">
       <button class="btn btn-del hidden" id="btnDel" onclick="deleteCard()">Eliminar</button>
@@ -255,52 +296,71 @@
 </div>
 
 <script>
+// ─── TAXONOMY ─────────────────────────────────────────────────────────────────
 const STATUS = {
-  backlog:    { label:'Backlog',         cls:'s-backlog',    order:0 },
-  prioritize: { label:'🔥 Prioritize',   cls:'s-prioritize', order:1 },
-  designfb:   { label:'Design feedback', cls:'s-designfb',   order:2 },
-  scheduled:  { label:'Scheduled',       cls:'s-scheduled',  order:3 },
-  published:  { label:'Published',       cls:'s-published',  order:4 },
-  archived:   { label:'Archived',        cls:'s-archived',   order:5 },
+  backlog:    {label:'Backlog',         cls:'s-backlog',    order:0},
+  prioritize: {label:'🔥 Prioritize',   cls:'s-prioritize', order:1},
+  designfb:   {label:'Design feedback', cls:'s-designfb',   order:2},
+  scheduled:  {label:'Scheduled',       cls:'s-scheduled',  order:3},
+  published:  {label:'Published',       cls:'s-published',  order:4},
+  archived:   {label:'Archived',        cls:'s-archived',   order:5},
 };
-const PILAR_CLS  = { 'Product':'p-product','Money talks':'p-money','Modern investor':'p-modern','PdA':'p-pda' };
-const SERIE_CLS  = { 'Guides':'sr-guides','Value prop':'sr-value','Safety':'sr-safety','Strategies':'sr-strats','Market analysis':'sr-market','Mindset':'sr-mindset','Pop culture':'sr-pop','Lifestyle':'sr-life' };
-const WHO_CLS    = { 'Distrito':'w-distrito','SM Team':'w-sm','Creative Studio':'w-creative','Val':'w-val' };
-const PLAT_ICONS = { Instagram:'📸',TikTok:'🎵','Twitter/X':'🐦',YouTube:'▶️',LinkedIn:'💼',Facebook:'📘',Newsletter:'📧' };
 
+// Pilar → its series (with CSS class for color)
+const PILAR_SERIES = {
+  'Product':         [{v:'Guides',cls:'so-product'},{v:'Value prop',cls:'so-product'},{v:'Safety',cls:'so-product'}],
+  'Money talks':     [{v:'Pop culture',cls:'so-money'},{v:'Lifestyle',cls:'so-money'}],
+  'Modern investor': [{v:'Strategies',cls:'so-modern'},{v:'Market analysis',cls:'so-modern'},{v:'Mindset',cls:'so-modern'}],
+  'PdA':             [],
+};
+
+// Serie → its tag class (for display on cards)
+const SERIE_TAG_CLS = {
+  'Guides':'t-sr-product','Value prop':'t-sr-product','Safety':'t-sr-product',
+  'Pop culture':'t-sr-money','Lifestyle':'t-sr-money',
+  'Strategies':'t-sr-modern','Market analysis':'t-sr-modern','Mindset':'t-sr-modern',
+};
+
+const PILAR_TAG_CLS = {'Product':'t-product','Money talks':'t-money','Modern investor':'t-modern','PdA':'t-pda'};
+const PLAT_ICONS    = {Instagram:'📸',TikTok:'🎵','Twitter/X':'🐦',YouTube:'▶️',LinkedIn:'💼',Facebook:'📘',Newsletter:'📧'};
+
+// ─── STATE ────────────────────────────────────────────────────────────────────
 let cards = [];
 let editId = null;
 let searchQ = '';
-let AF = { who:[], pilar:[], serie:[] };
+let AF = {who:[], pilar:[], serie:[]};
 let saveTimer;
+let dragId = null;
 
 const SEED = [
-  {id:'s1', status:'backlog',    title:'Vive Latino 2026',                     platforms:['Instagram','TikTok'],           who:['SM Team'],         pilar:['PdA'],             serie:['Pop culture'],   date:'',notes:'',url:'',createdAt:1},
-  {id:'s2', status:'backlog',    title:'Safety content',                        platforms:['Instagram','TikTok','Twitter/X'],who:['SM Team'],         pilar:['Product'],         serie:['Safety'],        date:'',notes:'',url:'',createdAt:2},
-  {id:'s3', status:'backlog',    title:'Dividendos',                            platforms:['Instagram'],                    who:['Distrito'],        pilar:['Modern investor'], serie:['Market analysis'],date:'',notes:'',url:'',createdAt:3},
-  {id:'s4', status:'backlog',    title:'Starbucks',                             platforms:['Instagram'],                    who:['Creative Studio'], pilar:['Money talks'],     serie:['Lifestyle'],     date:'',notes:'',url:'',createdAt:4},
-  {id:'s5', status:'prioritize', title:'Entender los detalles de una acción',   platforms:['Instagram'],                    who:['Distrito'],        pilar:['Product'],         serie:['Guides'],        date:'',notes:'',url:'',createdAt:5},
-  {id:'s6', status:'prioritize', title:'Realizar ganancias',                    platforms:['Instagram'],                    who:['Distrito'],        pilar:['Modern investor'], serie:['Strategies'],    date:'',notes:'',url:'',createdAt:6},
-  {id:'s7', status:'prioritize', title:'Which Guineapig are you?',              platforms:['Instagram','TikTok'],           who:['Creative Studio'], pilar:['PdA'],             serie:['Pop culture'],   date:'',notes:'',url:'',createdAt:7},
-  {id:'s8', status:'prioritize', title:'Casting call',                          platforms:['Instagram','TikTok','Twitter/X'],who:['Val'],            pilar:['PdA'],             serie:['Pop culture'],   date:'',notes:'',url:'',createdAt:8},
-  {id:'s9', status:'designfb',   title:'Giveaway',                              platforms:['Instagram','Twitter/X'],        who:['SM Team'],         pilar:['Product'],         serie:['Value prop'],    date:'',notes:'',url:'',createdAt:9},
-  {id:'s10',status:'designfb',   title:'PdA: Countdown Stories',                platforms:['Instagram'],                    who:['Creative Studio'], pilar:['PdA'],             serie:['Value prop'],    date:'',notes:'',url:'',createdAt:10},
-  {id:'s11',status:'designfb',   title:'Evolución del S&P',                     platforms:['Instagram','Twitter/X'],        who:['Distrito'],        pilar:['Modern investor'], serie:['Market analysis'],date:'',notes:'',url:'',createdAt:11},
-  {id:'s12',status:'designfb',   title:'DCA en Bitso',                          platforms:['Instagram'],                    who:['Distrito'],        pilar:['Product'],         serie:['Guides'],        date:'',notes:'',url:'',createdAt:12},
-  {id:'s13',status:'scheduled',  title:'Invertir la quincena',                  platforms:['Instagram','TikTok'],           who:['Distrito'],        pilar:['Money talks'],     serie:['Mindset'],       date:'',notes:'',url:'',createdAt:13},
-  {id:'s14',status:'scheduled',  title:'Market cap vs precio',                  platforms:['Instagram','Twitter/X'],        who:['Distrito'],        pilar:['Modern investor'], serie:['Guides'],        date:'',notes:'',url:'',createdAt:14},
+  {id:'s1', status:'backlog',    title:'Vive Latino 2026',                   platforms:['Instagram','TikTok'],            who:['SM Team'],         pilar:['PdA'],             serie:[],              icp:['Affluent'],   date:'',notes:'',url:'',createdAt:1},
+  {id:'s2', status:'backlog',    title:'Safety content',                      platforms:['Instagram','TikTok','Twitter/X'], who:['SM Team'],         pilar:['Product'],         serie:['Safety'],      icp:[],             date:'',notes:'',url:'',createdAt:2},
+  {id:'s3', status:'backlog',    title:'Dividendos',                          platforms:['Instagram'],                     who:['Distrito'],        pilar:['Modern investor'], serie:['Market analysis'],icp:['HNWI'],     date:'',notes:'',url:'',createdAt:3},
+  {id:'s4', status:'backlog',    title:'Starbucks',                           platforms:['Instagram'],                     who:['Creative Studio'], pilar:['Money talks'],     serie:['Lifestyle'],   icp:['Affluent'],   date:'',notes:'',url:'',createdAt:4},
+  {id:'s5', status:'prioritize', title:'Entender los detalles de una acción', platforms:['Instagram'],                     who:['Distrito'],        pilar:['Product'],         serie:['Guides'],      icp:[],             date:'',notes:'',url:'',createdAt:5},
+  {id:'s6', status:'prioritize', title:'Realizar ganancias',                  platforms:['Instagram'],                     who:['Distrito'],        pilar:['Modern investor'], serie:['Strategies'],  icp:['HNWI'],       date:'',notes:'',url:'',createdAt:6},
+  {id:'s7', status:'prioritize', title:'Which Guineapig are you?',            platforms:['Instagram','TikTok'],            who:['Creative Studio'], pilar:['PdA'],             serie:[],              icp:['Affluent'],   date:'',notes:'',url:'',createdAt:7},
+  {id:'s8', status:'prioritize', title:'Casting call',                        platforms:['Instagram','TikTok','Twitter/X'], who:['Val'],            pilar:['PdA'],             serie:[],              icp:[],             date:'',notes:'',url:'',createdAt:8},
+  {id:'s9', status:'designfb',   title:'Giveaway',                            platforms:['Instagram','Twitter/X'],         who:['SM Team'],         pilar:['Product'],         serie:['Value prop'],  icp:['Affluent'],   date:'',notes:'',url:'',createdAt:9},
+  {id:'s10',status:'designfb',   title:'PdA: Countdown Stories',              platforms:['Instagram'],                     who:['Creative Studio'], pilar:['PdA'],             serie:[],              icp:[],             date:'',notes:'',url:'',createdAt:10},
+  {id:'s11',status:'designfb',   title:'Evolución del S&P',                   platforms:['Instagram','Twitter/X'],         who:['Distrito'],        pilar:['Modern investor'], serie:['Market analysis'],icp:['HNWI'],   date:'',notes:'',url:'',createdAt:11},
+  {id:'s12',status:'designfb',   title:'DCA en Bitso',                        platforms:['Instagram'],                     who:['Distrito'],        pilar:['Product'],         serie:['Guides'],      icp:[],             date:'',notes:'',url:'',createdAt:12},
+  {id:'s13',status:'scheduled',  title:'Invertir la quincena',                platforms:['Instagram','TikTok'],            who:['Distrito'],        pilar:['Money talks'],     serie:['Lifestyle'],   icp:['Affluent'],   date:'',notes:'',url:'',createdAt:13},
+  {id:'s14',status:'scheduled',  title:'Market cap vs precio',                platforms:['Instagram','Twitter/X'],         who:['Distrito'],        pilar:['Modern investor'], serie:['Guides'],      icp:['HNWI'],       date:'',notes:'',url:'',createdAt:14},
 ];
 
+// ─── STORAGE ──────────────────────────────────────────────────────────────────
 async function load() {
   try {
-    const r = await window.storage.get('bct3', true);
+    const r = await window.storage.get('bct4', true);
     if (r) cards = JSON.parse(r.value);
-    else { cards = SEED; await save(); }
+    else { cards = SEED; await persist(); }
   } catch(e) { cards = SEED; }
 }
-async function save() { try { await window.storage.set('bct3', JSON.stringify(cards), true); } catch(e){} }
-function queueSave() { clearTimeout(saveTimer); saveTimer = setTimeout(save, 500); }
+async function persist() { try { await window.storage.set('bct4', JSON.stringify(cards), true); } catch(e){} }
+function qSave() { clearTimeout(saveTimer); saveTimer = setTimeout(persist, 500); }
 
+// ─── FILTER ───────────────────────────────────────────────────────────────────
 function visible() {
   let list = cards;
   if (searchQ) { const q=searchQ.toLowerCase(); list=list.filter(c=>c.title.toLowerCase().includes(q)||(c.notes||'').toLowerCase().includes(q)); }
@@ -310,6 +370,7 @@ function visible() {
   return list;
 }
 
+// ─── RENDER ───────────────────────────────────────────────────────────────────
 function render() {
   const vis = visible();
   const hasF = AF.who.length||AF.pilar.length||AF.serie.length||searchQ;
@@ -325,24 +386,27 @@ function render() {
       <div class="sep"></div>
       <button class="tab" onclick="toast('📅 Próximamente')">📅 Calendar</button>
       <div class="toolbar-right">
-        <div class="search-wrap"><span class="search-icon">🔍</span><input class="search-input" placeholder="Buscar..." value="${eA(searchQ)}" oninput="setQ(this.value)"></div>
+        <div class="search-wrap"><span class="search-icon">🔍</span>
+          <input class="search-input" placeholder="Buscar..." value="${eA(searchQ)}" oninput="setQ(this.value)">
+        </div>
         <button class="btn-new" onclick="openNew()">+ New</button>
       </div>
     </div>
     <div class="filter-bar">
-      <span class="filter-label">Quien:</span>
-      ${['Distrito','SM Team','Creative Studio','Val'].map(w=>`<div class="filter-chip${AF.who.includes(w)?' on':''}" onclick="tF('who','${eA(w)}')">${w}</div>`).join('')}
+      <span class="flabel">Quien:</span>
+      ${['Distrito','SM Team','Creative Studio','Val'].map(w=>`<div class="fc${AF.who.includes(w)?' on':''}" onclick="tF('who','${eA(w)}')">${w}</div>`).join('')}
       <div class="fsep"></div>
-      <span class="filter-label">Pilar:</span>
-      ${Object.keys(PILAR_CLS).map(p=>`<div class="filter-chip${AF.pilar.includes(p)?' on':''}" onclick="tF('pilar','${eA(p)}')">${p}</div>`).join('')}
+      <span class="flabel">Pilar:</span>
+      ${Object.keys(PILAR_SERIES).map(p=>`<div class="fc${AF.pilar.includes(p)?' on':''}" onclick="tF('pilar','${eA(p)}')">${p}</div>`).join('')}
       <div class="fsep"></div>
-      <span class="filter-label">Serie:</span>
-      ${Object.keys(SERIE_CLS).map(s=>`<div class="filter-chip${AF.serie.includes(s)?' on':''}" onclick="tF('serie','${eA(s)}')">${s}</div>`).join('')}
+      <span class="flabel">Serie:</span>
+      ${Object.values(PILAR_SERIES).flat().map(s=>s.v).filter((v,i,a)=>a.indexOf(v)===i).map(s=>`<div class="fc${AF.serie.includes(s)?' on':''}" onclick="tF('serie','${eA(s)}')">${s}</div>`).join('')}
       ${hasF?`<button class="clear-btn" onclick="clearF()">✕ Limpiar</button>`:''}
     </div>
     <div class="board">
       ${Object.keys(STATUS).map(sk=>renderCol(sk,vis)).join('')}
     </div>`;
+  initDrag();
 }
 
 function renderCol(sk, vis) {
@@ -355,24 +419,66 @@ function renderCol(sk, vis) {
       <span class="col-count">${total}</span>
       <button class="col-addbtn" onclick="openNew('${sk}')">+</button>
     </div>
-    <div class="cards">${col.map(renderCard).join('')}</div>
+    <div class="cards" data-col="${sk}">
+      ${col.map(c=>renderCard(c)).join('')}
+    </div>
     <button class="add-card-btn" onclick="openNew('${sk}')"><span style="font-size:15px">+</span> New item</button>
   </div>`;
 }
 
 function renderCard(c) {
-  const platTags = (c.platforms||[]).map(p=>`<span class="tag pt">${PLAT_ICONS[p]||''} ${p}</span>`).join('');
-  const pilarTags = (c.pilar||[]).map(p=>`<span class="tag ${PILAR_CLS[p]||''}">${p}</span>`).join('');
-  const serieTags = (c.serie||[]).map(s=>`<span class="tag ${SERIE_CLS[s]||''}">${s}</span>`).join('');
-  const whoTags = (c.who||[]).map(w=>`<span class="tag ${WHO_CLS[w]||''}">${w}</span>`).join('');
-  const allTags = [platTags,pilarTags,serieTags,whoTags].filter(Boolean).join('');
-  const footer = [];
-  if (c.date) footer.push(`<span class="cmeta">📅 ${fmt(c.date)}</span>`);
-  return `<div class="card" onclick="openEdit('${c.id}')">
+  const platTags  = (c.platforms||[]).map(p=>`<span class="tag t-plat">${PLAT_ICONS[p]||''} ${p}</span>`).join('');
+  const pilarTags = (c.pilar||[]).map(p=>`<span class="tag ${PILAR_TAG_CLS[p]||''}">${p}</span>`).join('');
+  const serieTags = (c.serie||[]).map(s=>`<span class="tag ${SERIE_TAG_CLS[s]||''}">${s}</span>`).join('');
+  const whoTags   = (c.who||[]).map(w=>`<span class="tag t-who">${w}</span>`).join('');
+  const icpTags   = (c.icp||[]).map(i=>`<span class="tag t-icp">ICP: ${i}</span>`).join('');
+  const allTags   = [platTags,pilarTags,serieTags,whoTags,icpTags].filter(Boolean).join('');
+  const footer    = c.date ? `<div class="card-footer"><span class="cmeta">📅 ${fmt(c.date)}</span></div>` : '';
+  return `<div class="card" draggable="true" data-id="${c.id}" onclick="openEdit('${c.id}')">
     <div class="card-top"><span class="card-icon">↑</span><span class="card-title">${eH(c.title)}</span></div>
     ${allTags?`<div class="card-tags">${allTags}</div>`:''}
-    ${footer.length?`<div class="card-footer">${footer.join('')}</div>`:''}
+    ${footer}
   </div>`;
+}
+
+// ─── DRAG & DROP ──────────────────────────────────────────────────────────────
+function initDrag() {
+  document.querySelectorAll('.card[draggable]').forEach(card => {
+    card.addEventListener('dragstart', e => {
+      dragId = card.dataset.id;
+      card.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    card.addEventListener('dragend', e => {
+      card.classList.remove('dragging');
+      document.querySelectorAll('.cards').forEach(c=>c.classList.remove('drag-over'));
+    });
+  });
+
+  document.querySelectorAll('.cards[data-col]').forEach(zone => {
+    zone.addEventListener('dragover', e => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      zone.classList.add('drag-over');
+    });
+    zone.addEventListener('dragleave', e => {
+      if (!zone.contains(e.relatedTarget)) zone.classList.remove('drag-over');
+    });
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('drag-over');
+      const targetStatus = zone.dataset.col;
+      if (!dragId || !targetStatus) return;
+      const card = cards.find(c=>c.id===dragId);
+      if (card && card.status !== targetStatus) {
+        card.status = targetStatus;
+        qSave();
+        render();
+        toast(`Movido a ${STATUS[targetStatus].label}`);
+      }
+      dragId = null;
+    });
+  });
 }
 
 // ─── MODAL ────────────────────────────────────────────────────────────────────
@@ -385,12 +491,15 @@ function openNew(status) {
   document.getElementById('fDate').value='';
   document.getElementById('fNotes').value='';
   document.getElementById('fUrl').value='';
-  document.querySelectorAll('.pick-opt,.tag-opt').forEach(el=>el.classList.remove('sel'));
+  document.querySelectorAll('.pick-opt,.tag-opt,.icp-opt').forEach(el=>el.classList.remove('sel'));
+  syncSeries();
   document.getElementById('modal').classList.remove('hidden');
   setTimeout(()=>document.getElementById('fTitle').focus(),80);
 }
 
 function openEdit(id) {
+  // prevent triggering when drag ends
+  if (dragId) return;
   const c=cards.find(x=>x.id===id); if(!c) return;
   editId=id;
   document.getElementById('mTitle').textContent='Editar tarjeta';
@@ -400,17 +509,19 @@ function openEdit(id) {
   document.getElementById('fDate').value=c.date||'';
   document.getElementById('fNotes').value=c.notes||'';
   document.getElementById('fUrl').value=c.url||'';
-  document.querySelectorAll('.pick-opt,.tag-opt').forEach(el=>el.classList.remove('sel'));
+  document.querySelectorAll('.pick-opt,.tag-opt,.icp-opt').forEach(el=>el.classList.remove('sel'));
   (c.platforms||[]).forEach(v=>selBy('platOpts',v));
   (c.who||[]).forEach(v=>selBy('whoOpts',v));
   (c.pilar||[]).forEach(v=>selBy('pilarOpts',v));
-  (c.serie||[]).forEach(v=>selBy('serieOpts',v));
+  // Sync series first, then restore selection
+  syncSeries(c.serie||[]);
+  (c.icp||[]).forEach(v=>selBy('icpOpts',v));
   document.getElementById('modal').classList.remove('hidden');
   setTimeout(()=>document.getElementById('fTitle').focus(),80);
 }
 
 function selBy(container, val) {
-  const el = document.querySelector(`#${container} [data-v="${CSS.escape(val)}"]`);
+  const el=document.querySelector(`#${container} [data-v="${CSS.escape(val)}"]`);
   if(el) el.classList.add('sel');
 }
 
@@ -419,8 +530,24 @@ function bgClose(e) { if(e.target.id==='modal') closeModal(); }
 
 function toggleMulti(el) { el.classList.toggle('sel'); }
 function toggleOne(el, container) {
-  document.querySelectorAll(`#${container} .pick-opt`).forEach(x=>x.classList.remove('sel'));
+  document.querySelectorAll(`#${container} .tag-opt, #${container} .pick-opt`).forEach(x=>x.classList.remove('sel'));
   el.classList.add('sel');
+}
+
+// Show only series belonging to selected pilar
+function syncSeries(restoreVals) {
+  const selPilar = document.querySelector('#pilarOpts .sel')?.dataset.v || null;
+  const series = selPilar ? PILAR_SERIES[selPilar] : [];
+  const container = document.getElementById('serieOpts');
+  const group = document.getElementById('serieGroup');
+  if (!series.length) {
+    group.style.opacity = '0.4';
+    container.innerHTML = '<span style="font-size:.8rem;color:var(--text3)">Selecciona un Pilar primero</span>';
+  } else {
+    group.style.opacity = '1';
+    container.innerHTML = series.map(s=>`<div class="tag-opt ${s.cls}" data-v="${eA(s.v)}" onclick="toggleMulti(this)">${s.v}</div>`).join('');
+    if (restoreVals) restoreVals.forEach(v=>selBy('serieOpts',v));
+  }
 }
 
 function getSel(container) {
@@ -438,6 +565,7 @@ function saveCard() {
     who: getSel('whoOpts'),
     pilar: getSel('pilarOpts'),
     serie: getSel('serieOpts'),
+    icp: getSel('icpOpts'),
     date: document.getElementById('fDate').value,
     notes: document.getElementById('fNotes').value.trim(),
     url: document.getElementById('fUrl').value.trim(),
@@ -445,20 +573,22 @@ function saveCard() {
   };
   if(editId){const i=cards.findIndex(c=>c.id===editId);cards[i]=data;}
   else cards.unshift(data);
-  queueSave(); closeModal(); render();
+  qSave(); closeModal(); render();
   toast(editId?'✓ Actualizado':'✓ Tarjeta creada');
 }
 
 function deleteCard() {
   if(!editId||!confirm('¿Eliminar esta tarjeta?')) return;
   cards=cards.filter(c=>c.id!==editId);
-  queueSave(); closeModal(); render(); toast('Eliminado');
+  qSave(); closeModal(); render(); toast('Eliminado');
 }
 
+// ─── FILTERS ──────────────────────────────────────────────────────────────────
 function setQ(v){searchQ=v;render();}
 function tF(type,val){const a=AF[type];AF[type]=a.includes(val)?a.filter(x=>x!==val):[...a,val];render();}
 function clearF(){AF={who:[],pilar:[],serie:[]};searchQ='';render();}
 
+// ─── UTILS ────────────────────────────────────────────────────────────────────
 function eH(t){return String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function eA(t){return String(t||'').replace(/'/g,"\\'").replace(/"/g,'&quot;');}
 function fmt(d){if(!d)return'';const dt=new Date(d+'T00:00:00');return dt.toLocaleDateString('es-MX',{day:'numeric',month:'short'});}
@@ -469,9 +599,13 @@ document.addEventListener('keydown',e=>{
   if((e.metaKey||e.ctrlKey)&&e.key==='Enter'&&!document.getElementById('modal').classList.contains('hidden')) saveCard();
 });
 
+// ─── INIT ─────────────────────────────────────────────────────────────────────
 (async()=>{
   await load(); render();
-  setInterval(async()=>{const p=JSON.stringify(cards);await load();if(JSON.stringify(cards)!==p)render();},15000);
+  setInterval(async()=>{
+    const p=JSON.stringify(cards); await load();
+    if(JSON.stringify(cards)!==p) render();
+  },15000);
 })();
 </script>
 </body>
