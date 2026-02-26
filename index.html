@@ -17,16 +17,12 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','Segoe UI',sans-serif;min-height:100vh;}
-
-/* PAGE HEADER */
 .page-header{padding:44px 48px 16px;}
 .page-title{font-size:2.2rem;font-weight:800;letter-spacing:-.5px;}
 .collab-bar{display:flex;align-items:center;gap:10px;margin-top:10px;}
 .collab-pill{font-size:.78rem;background:#e8f3fd;color:#2383e2;padding:4px 12px;border-radius:20px;border:1px solid #bdd8f7;font-weight:500;display:flex;align-items:center;gap:5px;}
 .online-dot{width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-
-/* TOOLBAR */
 .toolbar{display:flex;align-items:center;gap:8px;padding:12px 48px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
 .tab{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;font-size:.875rem;color:var(--text2);cursor:pointer;border:none;background:none;font-family:inherit;transition:background .15s;}
 .tab:hover{background:var(--surface2);}
@@ -40,12 +36,7 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .search-input::placeholder{color:var(--text3);}
 .btn-new{background:var(--accent);color:white;border:none;border-radius:6px;padding:7px 16px;font-size:.875rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s;}
 .btn-new:hover{background:#1a6fc4;}
-
-/* FILTER BAR — dropdowns */
 .filter-bar{display:flex;align-items:center;gap:8px;padding:10px 48px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap;}
-.filter-label-sm{font-size:.72rem;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.4px;}
-
-/* DROPDOWN FILTER */
 .dd-wrap{position:relative;}
 .dd-trigger{display:flex;align-items:center;gap:6px;padding:5px 12px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text2);font-size:.82rem;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap;font-weight:500;}
 .dd-trigger:hover{border-color:var(--text3);color:var(--text);}
@@ -63,8 +54,6 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .active-count{background:var(--accent);color:white;border-radius:20px;padding:0 6px;font-size:.7rem;font-weight:700;}
 .clear-all-btn{font-size:.78rem;color:#e03e3e;cursor:pointer;background:none;border:none;font-family:inherit;font-weight:600;padding:4px 8px;border-radius:6px;}
 .clear-all-btn:hover{background:#fff5f5;}
-
-/* BOARD */
 .board{display:flex;padding:20px 48px 60px;overflow-x:auto;align-items:flex-start;gap:14px;}
 .col{min-width:272px;width:272px;flex-shrink:0;}
 .col-header{display:flex;align-items:center;gap:8px;padding:2px 2px 12px;}
@@ -74,8 +63,6 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .col-addbtn:hover{background:var(--surface2);color:var(--text2);}
 .cards{display:flex;flex-direction:column;gap:8px;min-height:60px;border-radius:8px;transition:background .15s;padding:2px;}
 .cards.drag-over{background:rgba(35,131,226,.07);outline:2px dashed rgba(35,131,226,.3);}
-
-/* CARD (board) */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:13px 14px 11px;cursor:pointer;transition:box-shadow .15s,border-color .15s,opacity .15s;box-shadow:var(--shadow);user-select:none;}
 .card:hover{box-shadow:var(--shadow-md);border-color:var(--border2);}
 .card.dragging{opacity:.4;cursor:grabbing;}
@@ -88,15 +75,12 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .cmeta{font-size:.71rem;color:var(--text3);}
 .add-card-btn{display:flex;align-items:center;gap:5px;padding:7px 4px;border:none;background:none;color:var(--text3);font-size:.84rem;cursor:pointer;border-radius:6px;width:100%;font-family:inherit;margin-top:4px;transition:all .12s;}
 .add-card-btn:hover{color:var(--text2);background:var(--surface2);}
-
-/* STATUS COLORS */
 .s-backlog{background:#dbeafe;color:#1d4ed8;}
 .s-prioritize{background:#e5e7eb;color:#374151;}
 .s-designfb{background:#fef9c3;color:#854d0e;}
 .s-scheduled{background:#fed7aa;color:#9a3412;}
 .s-published{background:#dcfce7;color:#166534;}
 .s-archived{background:#ede9fe;color:#5b21b6;}
-/* TAG COLORS */
 .t-product{background:var(--product-bg);color:var(--product-fg);}
 .t-money{background:var(--money-bg);color:var(--money-fg);}
 .t-modern{background:var(--modern-bg);color:var(--modern-fg);}
@@ -109,8 +93,6 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .t-icp{background:var(--icp-bg);color:var(--icp-fg);}
 .t-channel{background:#ecfdf5;color:#065f46;}
 .t-posttype{background:#fff7ed;color:#9a3412;}
-
-/* ── DETAIL PANEL (Notion-style) ── */
 .detail-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;backdrop-filter:blur(2px);overflow-y:auto;}
 .detail-panel{background:var(--surface);border-radius:14px;width:100%;max-width:740px;box-shadow:0 24px 80px rgba(0,0,0,.2);position:relative;}
 .detail-icon-area{padding:32px 48px 0;font-size:48px;line-height:1;}
@@ -118,8 +100,6 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .detail-title{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;border:none;outline:none;width:100%;font-family:inherit;color:var(--text);background:transparent;line-height:1.2;}
 .detail-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text3);font-size:18px;cursor:pointer;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
 .detail-close:hover{background:var(--surface2);}
-
-/* PROPERTIES TABLE */
 .detail-props{padding:20px 48px 0;display:flex;flex-direction:column;gap:2px;}
 .prop-row{display:grid;grid-template-columns:160px 1fr;align-items:start;padding:5px 0;border-radius:6px;transition:background .12s;}
 .prop-row:hover{background:var(--surface2);}
@@ -129,8 +109,6 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .prop-value:hover{background:#ebebea;}
 .prop-value.empty{color:var(--text3);}
 .prop-select-wrap{position:relative;flex:1;}
-
-/* DETAIL CONTENT */
 .detail-body{padding:24px 48px 40px;display:flex;flex-direction:column;gap:20px;}
 .section-block{display:flex;flex-direction:column;gap:8px;}
 .section-heading{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);display:flex;align-items:center;gap:6px;}
@@ -150,8 +128,6 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .rich-editor ul,.rich-editor ol{padding-left:20px;margin:4px 0;}
 .rich-editor p{margin:0 0 4px;}
 .rich-editor:empty:before{content:attr(data-placeholder);color:var(--text3);pointer-events:none;}
-
-/* SLIDES */
 .slides-list{display:flex;flex-direction:column;gap:10px;}
 .slide-item{background:var(--surface2);border-radius:10px;padding:14px 16px;border:1px solid var(--border);}
 .slide-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
@@ -165,8 +141,6 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .slide-body:focus,.slide-input:focus{background:white;border-radius:4px;padding:2px 6px;}
 .add-slide-btn{display:flex;align-items:center;gap:6px;padding:8px 12px;border:1px dashed var(--border2);background:none;border-radius:8px;color:var(--text3);font-size:.84rem;cursor:pointer;font-family:inherit;transition:all .15s;width:100%;}
 .add-slide-btn:hover{border-color:var(--accent);color:var(--accent);}
-
-/* IMAGE REFERENCES */
 .img-refs{display:flex;flex-wrap:wrap;gap:10px;}
 .img-ref-item{position:relative;width:90px;height:90px;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:var(--surface2);}
 .img-ref-item img{width:100%;height:100%;object-fit:cover;}
@@ -176,15 +150,11 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .img-upload-btn:hover{border-color:var(--accent);color:var(--accent);}
 .img-upload-btn svg{width:20px;height:20px;}
 #imgFileInput{display:none;}
-
-/* PROP INLINE PICKERS */
 .inline-picker{position:absolute;top:calc(100% + 4px);left:0;background:var(--surface);border:1px solid var(--border2);border-radius:10px;box-shadow:var(--shadow-md);padding:6px;min-width:200px;z-index:400;display:flex;flex-direction:column;gap:2px;}
 .ip-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;cursor:pointer;font-size:.84rem;transition:background .12s;}
 .ip-item:hover{background:var(--surface2);}
 .ip-check{width:16px;height:16px;border:1.5px solid var(--border2);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;}
 .ip-item.on .ip-check{background:var(--accent);border-color:var(--accent);color:white;}
-
-/* DETAIL FOOTER */
 .detail-footer{padding:14px 48px;border-top:1px solid var(--border);display:flex;gap:8px;justify-content:flex-end;align-items:center;}
 .btn{border:none;border-radius:8px;padding:8px 18px;font-size:.875rem;font-weight:600;cursor:pointer;transition:all .15s;font-family:inherit;}
 .btn-primary{background:var(--text);color:white;}
@@ -193,20 +163,22 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .btn-ghost:hover{background:var(--surface2);}
 .btn-del{background:none;color:#e03e3e;border:none;font-size:.82rem;margin-right:auto;}
 .btn-del:hover{text-decoration:underline;}
-
-/* IMPORT MODAL */
 .import-modal{background:var(--surface);border-radius:14px;width:100%;max-width:480px;box-shadow:0 24px 80px rgba(0,0,0,.2);padding:28px 32px;display:flex;flex-direction:column;gap:16px;}
 .import-modal h2{font-size:1.1rem;font-weight:700;}
 .import-zone{border:2px dashed var(--border2);border-radius:10px;padding:32px;text-align:center;cursor:pointer;color:var(--text2);font-size:.88rem;transition:all .15s;}
 .import-zone:hover{border-color:var(--accent);color:var(--accent);}
 #csvFileInput{display:none;}
-
 .hidden{display:none!important;}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:white;border-radius:8px;padding:10px 20px;font-size:.84rem;z-index:999;white-space:nowrap;box-shadow:var(--shadow-md);animation:fadeUp .2s ease;}
 @keyframes fadeUp{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
 .loading{display:flex;align-items:center;justify-content:center;padding:100px;gap:10px;color:var(--text2);}
 .spinner{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg)}}
+.sync-indicator{font-size:.72rem;color:var(--text3);display:flex;align-items:center;gap:4px;}
+.sync-dot{width:6px;height:6px;border-radius:50%;background:var(--text3);}
+.sync-dot.saving{background:#f59e0b;animation:pulse 1s infinite;}
+.sync-dot.saved{background:#22c55e;}
+.sync-dot.error{background:#ef4444;}
 ::-webkit-scrollbar{width:5px;height:5px;}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
 @media(max-width:640px){
@@ -217,15 +189,15 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 </style>
 </head>
 <body>
-<div id="root"><div class="loading"><div class="spinner"></div> Cargando…</div></div>
+<div id="root"><div class="loading"><div class="spinner"></div> Cargando tablero…</div></div>
 <div id="detailOverlay" class="detail-overlay hidden" onclick="detailBgClose(event)"></div>
 <div id="importOverlay" class="detail-overlay hidden" onclick="importBgClose(event)">
   <div class="import-modal">
-    <h2>📥 Importar desde Notion (CSV)</h2>
-    <p style="font-size:.84rem;color:var(--text2);line-height:1.5">Exporta tu base de datos desde Notion como <strong>CSV</strong> y sube el archivo aquí. Mapearemos automáticamente las columnas que coincidan.</p>
+    <h2>📥 Importar desde CSV</h2>
+    <p style="font-size:.84rem;color:var(--text2);line-height:1.5">Sube un archivo CSV y mapearemos automáticamente las columnas.</p>
     <div class="import-zone" onclick="document.getElementById('csvFileInput').click()">
       <div style="font-size:28px;margin-bottom:8px">📄</div>
-      Haz clic para seleccionar tu CSV de Notion<br>
+      Haz clic para seleccionar tu CSV<br>
       <span style="font-size:.76rem;color:var(--text3);margin-top:4px;display:block">o arrastra y suéltalo aquí</span>
     </div>
     <input type="file" id="csvFileInput" accept=".csv" onchange="handleCSV(event)">
@@ -239,6 +211,41 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 <input type="file" id="imgFileInput" accept="image/*" multiple onchange="handleImgUpload(event)">
 
 <script>
+// ─── SUPABASE CONFIG ──────────────────────────────────────────────────────────
+const SB_URL = 'https://gfcagpyponsltsxxsbkd.supabase.co';
+const SB_KEY = 'sb_publishable__qOsvJUbXtFZBcy6Aj68yA_v1d4qiFq';
+const SB_HEADERS = {
+  'Content-Type': 'application/json',
+  'apikey': SB_KEY,
+  'Authorization': `Bearer ${SB_KEY}`,
+  'Prefer': 'return=minimal'
+};
+
+async function sbGet() {
+  const r = await fetch(`${SB_URL}/rest/v1/cards?select=id,data,updated_at&order=updated_at.asc`, {
+    headers: { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}` }
+  });
+  if (!r.ok) throw new Error('Fetch failed');
+  return await r.json();
+}
+
+async function sbUpsert(card) {
+  const r = await fetch(`${SB_URL}/rest/v1/cards`, {
+    method: 'POST',
+    headers: { ...SB_HEADERS, 'Prefer': 'resolution=merge-duplicates,return=minimal' },
+    body: JSON.stringify({ id: card.id, data: card, updated_at: new Date().toISOString() })
+  });
+  if (!r.ok) throw new Error('Upsert failed');
+}
+
+async function sbDelete(id) {
+  const r = await fetch(`${SB_URL}/rest/v1/cards?id=eq.${id}`, {
+    method: 'DELETE',
+    headers: SB_HEADERS
+  });
+  if (!r.ok) throw new Error('Delete failed');
+}
+
 // ─── TAXONOMY ─────────────────────────────────────────────────────────────────
 const STATUS = {
   backlog:    {label:'Backlog',         cls:'s-backlog',    order:0},
@@ -267,6 +274,8 @@ const SERIE_TAG_CLS  = {
 };
 const PLAT_ICONS = {Instagram:'📸',TikTok:'🎵','Twitter/X':'🐦',YouTube:'▶️',LinkedIn:'💼',Facebook:'📘',Newsletter:'📧'};
 
+const SEED = [{"id":"s1","title":"Digital Gold (XAUT & PAXG)","status":"published","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Strategies"],"icp":["Affluent"],"date":"Feb 10","brief":"Invertir como los abuelos","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":1},{"id":"s2","title":"Feriado XXL - AR","status":"published","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Product"],"serie":["Value prop"],"icp":["Affluent"],"date":"Feb 10","brief":"Trade 24/7","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":2},{"id":"s3","title":"Invest as a Bonsai","status":"published","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Mindset"],"icp":["Affluent"],"date":"Feb 10","brief":"La riqueza no es un edificio que se construye; es un ser vivo que se cultiva.","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":3},{"id":"s4","title":"Superbowl","status":"published","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Money talks"],"serie":["Pop culture"],"icp":["Affluent"],"date":"Feb 10","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"https://drive.google.com/drive/folders/1X2PYII0t10cj-61AKOQmR4zSQqIlMwLE","createdAt":4},{"id":"s5","title":"San Valentin","status":"published","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Product"],"serie":["Value prop"],"icp":["Affluent"],"date":"Feb 10","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"https://drive.google.com/drive/folders/1xtR2wt-DHfL577HBJ6EgZC47_jR1lDcE","createdAt":5},{"id":"s6","title":"DCA en Bitso","status":"designfb","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Product"],"serie":["Guides"],"icp":["Affluent"],"date":"Feb 16","brief":"Captura de pantalla","slides":[],"refs":[],"copyOut":"","notes":"https://drive.google.com/drive/folders/1N1Yhsl_6TXfRNDkPvQuJJIqCRaSPQamf?usp=sharing","url":"","createdAt":6},{"id":"s7","title":"Invertir la quincena","status":"designfb","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Product"],"serie":["Value prop"],"icp":["Affluent","HNWI"],"date":"Feb 10","brief":"","slides":[],"refs":[],"copyOut":"","notes":"https://drive.google.com/drive/folders/11HTPB4P-FfJ6-_mcQF0jscV5y0lxzYvS?usp=drive_link","url":"","createdAt":7},{"id":"s8","title":"Evolución del S&P","status":"designfb","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Mindset"],"icp":["HNWI"],"date":"Feb 18","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":8},{"id":"s9","title":"F1 - Money Talks","status":"designfb","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Money talks"],"serie":["Pop culture"],"icp":["Affluent"],"date":"Feb 18","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":9},{"id":"s10","title":"Cartas Pókemon","status":"published","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Money talks"],"serie":["Pop culture"],"icp":["Affluent"],"date":"Feb 26","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":10},{"id":"s11","title":"Oscars","status":"designfb","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Money talks"],"serie":["Pop culture"],"icp":["Affluent"],"date":"Mar 11","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":11},{"id":"s12","title":"Minimos historicos","status":"archived","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Mindset"],"icp":["Affluent"],"date":"Feb 11","brief":"https://www.instagram.com/p/DO_iS2IDfBe/","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":12},{"id":"s13","title":"Rebalancea como una playlist","status":"prioritize","channels":[],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Strategies"],"icp":[],"date":"Feb 11","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":13},{"id":"s14","title":"PdA: The \"Leaked\" Script","status":"archived","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["PdA"],"serie":[],"icp":["Affluent"],"date":"Feb 11","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":14},{"id":"s15","title":"PdA: Countdown Stories","status":"designfb","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["PdA"],"serie":[],"icp":[],"date":"Mar 6","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":15},{"id":"s16","title":"Safety content","status":"backlog","channels":["Instagram","TikTok","Twitter/X"],"postType":[],"who":["Creative Studio"],"pilar":["Product"],"serie":["Safety"],"icp":["Affluent","HNWI"],"date":"Feb 27","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":16},{"id":"s17","title":"Short video: Let's do something impossible","status":"prioritize","channels":["Instagram","TikTok"],"postType":[],"who":["Val"],"pilar":["PdA"],"serie":[],"icp":["Affluent"],"date":"Feb 23","brief":"https://www.instagram.com/p/DTynoIoDnv2/","slides":[],"refs":[],"copyOut":"","notes":"https://drive.google.com/drive/folders/1gR9-U5QTUO1NSrYogzspKaqGKchY5xQC?usp=sharing","url":"https://drive.google.com/drive/folders/1IE04YKONRlBQ6eo5q8lI3cLudQT81-xC?usp=sharing","createdAt":17},{"id":"s18","title":"POV: Stunt Double Life","status":"prioritize","channels":["Instagram","TikTok"],"postType":[],"who":["Val"],"pilar":["PdA"],"serie":[],"icp":["Affluent"],"date":"Feb 23","brief":"","slides":[],"refs":[],"copyOut":"","notes":"https://docs.google.com/document/d/1gc1Z-iVbC7xrcu4HYnrRAQAnIqVb83uqnbhCbCELqNI/edit?usp=sharing","url":"https://drive.google.com/drive/folders/1DsmixJ_vNrjnveoKodGAiXmPJx0IXZXF?usp=sharing","createdAt":18},{"id":"s19","title":"Meme: \"Wanna be Eiza\" waiting in the Uber","status":"prioritize","channels":["Instagram","TikTok"],"postType":[],"who":["Val"],"pilar":["PdA"],"serie":[],"icp":[],"date":"Feb 23","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":19},{"id":"s20","title":"Casting call","status":"prioritize","channels":["Instagram","TikTok","Twitter/X"],"postType":[],"who":["Val"],"pilar":["PdA"],"serie":[],"icp":[],"date":"Feb 23","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":20},{"id":"s21","title":"Mag 7","status":"designfb","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Market analysis"],"icp":["Affluent","HNWI"],"date":"Feb 19","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":21},{"id":"s22","title":"Which Guineapig are you?","status":"prioritize","channels":["Instagram","TikTok"],"postType":[],"who":["Val"],"pilar":["PdA"],"serie":[],"icp":[],"date":"Feb 23","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":22},{"id":"s23","title":"Realizar ganancias","status":"prioritize","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Strategies"],"icp":["Affluent","HNWI"],"date":"Mar 4","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":23},{"id":"s24","title":"Entender los detalles de una acción","status":"prioritize","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Product"],"serie":["Guides"],"icp":["Affluent","HNWI"],"date":"Mar 24","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"https://support.bitso.com/hc/es-mx/articles/41793383787796","createdAt":24},{"id":"s25","title":"Dividendos","status":"backlog","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Product"],"serie":["Value prop"],"icp":["Affluent","HNWI"],"date":"Mar 31","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"https://support.bitso.com/hc/es-mx/articles/41793679229972","createdAt":25},{"id":"s26","title":"Starbucks","status":"backlog","channels":["Instagram"],"postType":[],"who":["Distrito"],"pilar":["Money talks"],"serie":["Lifestyle"],"icp":["HNWI"],"date":"Feb 25","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":26},{"id":"s27","title":"Investor starter pack","status":"published","channels":["Instagram"],"postType":[],"who":["SM Team"],"pilar":["Money talks"],"serie":["Lifestyle"],"icp":["HNWI"],"date":"Feb 18","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"https://drive.google.com/drive/folders/19IxU0LmNJzQGp4QX28JVUC2fqpOZCpWX?usp=sharing","createdAt":27},{"id":"s28","title":"Market cap vs.","status":"backlog","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Market analysis"],"icp":["Affluent","HNWI"],"date":"Mar 4","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":28},{"id":"s29","title":"Giveaway","status":"designfb","channels":["Instagram","Twitter/X"],"postType":[],"who":[],"pilar":["Product"],"serie":[],"icp":[],"date":"Feb 18","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":29},{"id":"s30","title":"Países que holdean BTC","status":"backlog","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Market analysis"],"icp":["Affluent","HNWI"],"date":"Mar 11","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":30},{"id":"s31","title":"Países con reservas de oro","status":"backlog","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Market analysis"],"icp":["Affluent","HNWI"],"date":"Mar 11","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":31},{"id":"s32","title":"Mundial: el nuevo lujo","status":"backlog","channels":["Instagram","TikTok"],"postType":[],"who":["Distrito"],"pilar":["Money talks"],"serie":["Pop culture"],"icp":["Affluent"],"date":"Feb 18","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":32},{"id":"s33","title":"Treatenomics","status":"backlog","channels":["Instagram","TikTok","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Money talks"],"serie":["Lifestyle"],"icp":["Affluent","HNWI"],"date":"Feb 18","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":33},{"id":"s34","title":"Market análisis","status":"backlog","channels":["Instagram","Twitter/X"],"postType":[],"who":["Distrito"],"pilar":["Modern investor"],"serie":["Market analysis"],"icp":["HNWI"],"date":"Feb 26","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":34},{"id":"s35","title":"Vive Latino 2026","status":"backlog","channels":["Instagram","TikTok"],"postType":[],"who":["Distrito"],"pilar":["Money talks"],"serie":["Pop culture"],"icp":["Affluent","HNWI"],"date":"Mar 11","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":35},{"id":"s36","title":"Hola, soy tu cerebro/ soy tu estomago","status":"designfb","channels":["Instagram","TikTok"],"postType":[],"who":["Val"],"pilar":["Money talks"],"serie":["Lifestyle"],"icp":["Affluent"],"date":"Mar 18","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":36},{"id":"s37","title":"ASMR financiero","status":"designfb","channels":["Instagram","TikTok","Twitter/X"],"postType":[],"who":["Val"],"pilar":["Modern investor"],"serie":["Mindset"],"icp":["Affluent","HNWI"],"date":"Mar 18","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":37},{"id":"s38","title":"Red/green chill dog","status":"backlog","channels":["TikTok","Twitter/X"],"postType":[],"who":["SM Team"],"pilar":["Modern investor"],"serie":["Mindset"],"icp":["Affluent","HNWI"],"date":"Feb 27","brief":"","slides":[],"refs":[],"copyOut":"","notes":"","url":"","createdAt":38}];
+
 // ─── STATE ────────────────────────────────────────────────────────────────────
 let cards = [];
 let searchQ = '';
@@ -274,52 +283,74 @@ let AF = {channel:[], who:[], pilar:[], serie:[]};
 let dragId = null;
 let sortBy = 'default';
 let saveTimer;
-let lastSaveTime = 0;
 let currentDetailId = null;
 let pendingImport = [];
 let openDropdown = null;
+let syncStatus = 'saved'; // 'saving' | 'saved' | 'error'
+let pollTimer;
 
-const SEED = [{"id": "s1", "title": "Digital Gold (XAUT & PAXG)", "status": "published", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Strategies"], "icp": ["Affluent"], "date": "Feb 10", "brief": "Invertir como los abuelos", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 1}, {"id": "s2", "title": "Feriado XXL - AR", "status": "published", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Product"], "serie": ["Value prop"], "icp": ["Affluent"], "date": "Feb 10", "brief": "Trade 24/7", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 2}, {"id": "s3", "title": "Invest as a Bonsai", "status": "published", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Mindset"], "icp": ["Affluent"], "date": "Feb 10", "brief": "La riqueza no es un edificio que se construye; es un ser vivo que se cultiva.", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 3}, {"id": "s4", "title": "Superbowl", "status": "published", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Money talks"], "serie": ["Pop culture"], "icp": ["Affluent"], "date": "Feb 10", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "https://drive.google.com/drive/folders/1X2PYII0t10cj-61AKOQmR4zSQqIlMwLE", "createdAt": 4}, {"id": "s5", "title": "San Valentin", "status": "published", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Product"], "serie": ["Value prop"], "icp": ["Affluent"], "date": "Feb 10", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "https://drive.google.com/drive/folders/1xtR2wt-DHfL577HBJ6EgZC47_jR1lDcE", "createdAt": 5}, {"id": "s6", "title": "DCA en Bitso", "status": "designfb", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Product"], "serie": ["Guides"], "icp": ["Affluent"], "date": "Feb 16", "brief": "Captura de pantalla", "slides": [], "refs": [], "copyOut": "", "notes": "https://drive.google.com/drive/folders/1N1Yhsl_6TXfRNDkPvQuJJIqCRaSPQamf?usp=sharing", "url": "", "createdAt": 6}, {"id": "s7", "title": "Invertir la quincena", "status": "designfb", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Product"], "serie": ["Value prop"], "icp": ["Affluent", "HNWI"], "date": "Feb 10", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "https://drive.google.com/drive/folders/11HTPB4P-FfJ6-_mcQF0jscV5y0lxzYvS?usp=drive_link", "url": "", "createdAt": 7}, {"id": "s8", "title": "Evolución del S&P", "status": "designfb", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Mindset"], "icp": ["HNWI"], "date": "Feb 18", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 8}, {"id": "s9", "title": "F1 - Money Talks", "status": "designfb", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Money talks"], "serie": ["Pop culture"], "icp": ["Affluent"], "date": "Feb 18", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 9}, {"id": "s10", "title": "Cartas Pókemon", "status": "published", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Money talks"], "serie": ["Pop culture"], "icp": ["Affluent"], "date": "Feb 26", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 10}, {"id": "s11", "title": "Oscars", "status": "designfb", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Money talks"], "serie": ["Pop culture"], "icp": ["Affluent"], "date": "Mar 11", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 11}, {"id": "s12", "title": "Minimos historicos", "status": "archived", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Mindset"], "icp": ["Affluent"], "date": "Feb 11", "brief": "https://www.instagram.com/p/DO_iS2IDfBe/", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 12}, {"id": "s13", "title": "Rebalancea como una playlist", "status": "prioritize", "channels": [], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Strategies"], "icp": [], "date": "Feb 11", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 13}, {"id": "s14", "title": "PdA: The \"Leaked\" Script", "status": "archived", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["PdA"], "serie": [], "icp": ["Affluent"], "date": "Feb 11", "brief": "https://www.google.com/search?sca_esv=59623aa993e8ccae&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3vWUtYx0DZdicpfE1faGYemg2KC4yuMPyQlIvlWqq2At2yMvCZgi_bwXXU0sv2NZz-do-7reUzJedhGnIXhKGuUFyoXjhqCzaayGmBsnSNjybdoBFcfZIo4O3r11dfjsX9noz133K6nvAb6AlSigrJGaSkHGzBju-O7lsi27eOFNhvv6ug&q=scripts+de+peliculas&sa=X&ved=2ahUKEwi0iO2975qSAxVmCLkGHa43FCgQtKgLegQIGRAB&biw=1710&bih=947&dpr=2&aic=0#sv=CAMSWBoyKhBlLUs5aWxrcWU2OW5UZWhNMg5LOWlsa3FlNjluVGVoTToOOHNMSmtTNGVqOUdibk0gBCocCgZtb3NhaWMSEGUtSzlpbGtxZTY5blRlaE0YADABOAAYByD6hvyfCDACOgBKCggCEAIYAiACKAI", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 14}, {"id": "s15", "title": "PdA: Countdown Stories", "status": "designfb", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["PdA"], "serie": [], "icp": [], "date": "Mar 6", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 15}, {"id": "s16", "title": "Safety content", "status": "backlog", "channels": ["Instagram", "TikTok", "Twitter/X"], "postType": [], "who": ["Creative Studio"], "pilar": ["Product"], "serie": ["Safety"], "icp": ["Affluent", "HNWI"], "date": "Feb 27", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 16}, {"id": "s17", "title": "Short video: Let's do something impossible", "status": "prioritize", "channels": ["Instagram", "TikTok"], "postType": [], "who": ["Val"], "pilar": ["PdA"], "serie": [], "icp": ["Affluent"], "date": "Feb 23", "brief": "https://www.instagram.com/p/DTynoIoDnv2/", "slides": [], "refs": [], "copyOut": "", "notes": "https://drive.google.com/drive/folders/1gR9-U5QTUO1NSrYogzspKaqGKchY5xQC?usp=sharing", "url": "https://drive.google.com/drive/folders/1IE04YKONRlBQ6eo5q8lI3cLudQT81-xC?usp=sharing", "createdAt": 17}, {"id": "s18", "title": "POV: Stunt Double Life", "status": "prioritize", "channels": ["Instagram", "TikTok"], "postType": [], "who": ["Val"], "pilar": ["PdA"], "serie": [], "icp": ["Affluent"], "date": "Feb 23", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "https://docs.google.com/document/d/1gc1Z-iVbC7xrcu4HYnrRAQAnIqVb83uqnbhCbCELqNI/edit?usp=sharing", "url": "https://drive.google.com/drive/folders/1DsmixJ_vNrjnveoKodGAiXmPJx0IXZXF?usp=sharing", "createdAt": 18}, {"id": "s19", "title": "Meme: \"Wanna be Eiza\" waiting in the Uber", "status": "prioritize", "channels": ["Instagram", "TikTok"], "postType": [], "who": ["Val"], "pilar": ["PdA"], "serie": [], "icp": [], "date": "Feb 23", "brief": "https://www.instagram.com/reel/DUQ3-SYj6Z8/?igsh=MXJsamxvdGF2ZHAyMw==", "slides": [], "refs": [], "copyOut": "", "notes": "https://docs.google.com/document/d/1TqTOuoG_N5gybScOvAS9lbqbL8dEh9xWTTLqYleJs7I/edit?usp=sharing", "url": "https://drive.google.com/drive/folders/10gZ-bouORnF6PWguofoZUXbgeyGP3Ix2?usp=sharing", "createdAt": 19}, {"id": "s20", "title": "Casting call", "status": "prioritize", "channels": ["Instagram", "TikTok", "Twitter/X"], "postType": [], "who": ["Val"], "pilar": ["PdA"], "serie": [], "icp": [], "date": "Feb 23", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "https://docs.google.com/document/d/1mf48WcGFjA4vbFM6iCBV_9oqZ9fG6stHxm2ZTQ5pP8o/edit?usp=sharing", "url": "https://drive.google.com/drive/folders/13wVAfdAW1-cqcZ1Iprngn3OYQgrbXRdO?usp=sharing", "createdAt": 20}, {"id": "s21", "title": "Mag 7", "status": "designfb", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Market analysis"], "icp": ["Affluent", "HNWI"], "date": "Feb 19", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 21}, {"id": "s22", "title": "Which Guineapig are you?", "status": "prioritize", "channels": ["Instagram", "TikTok"], "postType": [], "who": ["Val"], "pilar": ["PdA"], "serie": [], "icp": [], "date": "Feb 23", "brief": "https://www.tiktok.com/@isabellelizcano/video/7512131280213921080?_r=1&_t=ZS-93GF3XfFpGm", "slides": [], "refs": [], "copyOut": "", "notes": "https://docs.google.com/document/d/1p6jCD621LSZs5cIEEskTlH_EWcxOMyvcrnr0BVEeMHc/edit?usp=sharing", "url": "https://drive.google.com/drive/folders/1KsLqhENPtnl2_r4WrXozDAb6hL_TjjE8?usp=sharing", "createdAt": 22}, {"id": "s23", "title": "Realizar ganancias", "status": "prioritize", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Strategies"], "icp": ["Affluent", "HNWI"], "date": "Mar 4", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 23}, {"id": "s24", "title": "Entender los detalles de una acción", "status": "prioritize", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Product"], "serie": ["Guides"], "icp": ["Affluent", "HNWI"], "date": "Mar 24", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "https://support.bitso.com/hc/es-mx/articles/41793383787796-Entender-los-detalles-de-una-acci%C3%B3n-precios-gr%C3%A1ficos-estad%C3%ADsticas-y-desempe%C3%B1o", "createdAt": 24}, {"id": "s25", "title": "Dividendos", "status": "backlog", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Product"], "serie": ["Value prop"], "icp": ["Affluent", "HNWI"], "date": "Mar 31", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "https://support.bitso.com/hc/es-mx/articles/41793679229972-Dividendos-Qu%C3%A9-son-c%C3%B3mo-se-pagan-y-c%C3%B3mo-recibirlos", "createdAt": 25}, {"id": "s26", "title": "Starbucks", "status": "backlog", "channels": ["Instagram"], "postType": [], "who": ["Distrito"], "pilar": ["Money talks"], "serie": ["Lifestyle"], "icp": ["HNWI"], "date": "Feb 25", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 26}, {"id": "s27", "title": "Investor starter pack", "status": "published", "channels": ["Instagram"], "postType": [], "who": ["SM Team"], "pilar": ["Money talks"], "serie": ["Lifestyle"], "icp": ["HNWI"], "date": "Feb 18", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "https://drive.google.com/drive/folders/19IxU0LmNJzQGp4QX28JVUC2fqpOZCpWX?usp=sharing", "createdAt": 27}, {"id": "s28", "title": "Market cap vs.", "status": "backlog", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Market analysis"], "icp": ["Affluent", "HNWI"], "date": "Mar 4", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 28}, {"id": "s29", "title": "Giveaway", "status": "designfb", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": [], "pilar": ["Product"], "serie": [], "icp": [], "date": "Feb 18", "brief": "https://www.instagram.com/p/DT3F704Eb0T/?img_index=1", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 29}, {"id": "s30", "title": "Países que holdean BTC", "status": "backlog", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Market analysis"], "icp": ["Affluent", "HNWI"], "date": "Mar 11", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 30}, {"id": "s31", "title": "Países con reservas de oro", "status": "backlog", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Market analysis"], "icp": ["Affluent", "HNWI"], "date": "Mar 11", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 31}, {"id": "s32", "title": "Mundial: el nuevo lujo", "status": "backlog", "channels": ["Instagram", "TikTok"], "postType": [], "who": ["Distrito"], "pilar": ["Money talks"], "serie": ["Pop culture"], "icp": ["Affluent"], "date": "Feb 18", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 32}, {"id": "s33", "title": "Treatenomics", "status": "backlog", "channels": ["Instagram", "TikTok", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Money talks"], "serie": ["Lifestyle"], "icp": ["Affluent", "HNWI"], "date": "Feb 18", "brief": "https://www.cnbc.com/2025/08/09/from-lipsticks-to-concerts-the-treatonomics-trend-is-booming.html", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 33}, {"id": "s34", "title": "Market análisis", "status": "backlog", "channels": ["Instagram", "Twitter/X"], "postType": [], "who": ["Distrito"], "pilar": ["Modern investor"], "serie": ["Market analysis"], "icp": ["HNWI"], "date": "Feb 26", "brief": "INTERNAL: https://bitso.slack.com/archives/C0A811NC9KM/p1771507909360769?thread_ts=1771438604.992739&cid=C0A811NC9KM", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 34}, {"id": "s35", "title": "Vive Latino 2026", "status": "backlog", "channels": ["Instagram", "TikTok"], "postType": [], "who": ["Distrito"], "pilar": ["Money talks"], "serie": ["Pop culture"], "icp": ["Affluent", "HNWI"], "date": "Mar 11", "brief": "", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 35}, {"id": "s36", "title": "Hola, soy tu cerebro/ soy tu estomago", "status": "designfb", "channels": ["Instagram", "TikTok"], "postType": [], "who": ["Val"], "pilar": ["Money talks"], "serie": ["Lifestyle"], "icp": ["Affluent"], "date": "Mar 18", "brief": "https://www.instagram.com/p/DTsh8AREYtU/", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 36}, {"id": "s37", "title": "ASMR financiero", "status": "designfb", "channels": ["Instagram", "TikTok", "Twitter/X"], "postType": [], "who": ["Val"], "pilar": ["Modern investor"], "serie": ["Mindset"], "icp": ["Affluent", "HNWI"], "date": "Mar 18", "brief": "https://www.tiktok.com/@matdilisio/video/7360696530484858144?q=ASMR%20tech&t=1771534620606", "slides": [], "refs": [], "copyOut": "", "notes": "", "url": "", "createdAt": 37}, {"id": "s38", "title": "Red/green chill dog", "status": "backlog", "channels": ["TikTok", "Twitter/X"], "postType": [], "who": ["SM Team"], "pilar": ["Modern investor"], "serie": ["Mindset"], "icp": ["Affluent", "HNWI"], "date": "Feb 27", "brief": "https://x.com/alifarhat79/status/2024554318477529313", "slides": [], "refs": [], "copyOut": "", "notes": "https://tenor.com/es-419/view/shiba-shiba-dancing-shiba-dancing-music-dog-music-dog-dancing-gif-16848691", "url": "", "createdAt": 38}];
-
-// ─── STORAGE ──────────────────────────────────────────────────────────────────
-const API = 'https://script.google.com/a/macros/bitso.com/s/AKfycbwop8vHqrwP6yoopDdMoVKl1ff6gtNLbF9tVPMeomXp3vgn5YLeiblvCEB7z4ijH__miA/exec';
-
+// ─── LOAD & SYNC ──────────────────────────────────────────────────────────────
 async function load() {
   try {
-    const r = await fetch(API, {method:'GET', redirect:'follow'});
-    const data = await r.json();
-    if (data.cards && Array.isArray(data.cards) && data.cards.length > 0) {
-      cards = data.cards;
+    const rows = await sbGet();
+    if (rows.length > 0) {
+      cards = rows.map(r => r.data);
       return;
     }
-    // First time — seed with CSV data
+    // Primera vez: sembrar datos
     cards = SEED;
-    await persist();
+    await Promise.all(cards.map(sbUpsert));
   } catch(e) {
     console.warn('Load error:', e);
-    if (!cards.length) cards = SEED;
+    cards = SEED;
+    toast('⚠️ Sin conexión — modo offline');
   }
 }
 
-async function persist() {
+function setSyncStatus(s) {
+  syncStatus = s;
+  const dot = document.querySelector('.sync-dot');
+  const txt = document.querySelector('.sync-text');
+  if (!dot || !txt) return;
+  dot.className = 'sync-dot ' + s;
+  txt.textContent = s === 'saving' ? 'Guardando…' : s === 'saved' ? 'Guardado' : 'Error al guardar';
+}
+
+async function persistCard(card) {
+  setSyncStatus('saving');
   try {
-    await fetch(API, {
-      method: 'POST',
-      redirect: 'follow',
-      headers: {'Content-Type': 'text/plain'},
-      body: JSON.stringify({ action: 'save', cards })
-    });
-    lastSaveTime = Date.now();
-    // Also save locally as backup
-    try { localStorage.setItem('smct_backup', JSON.stringify(cards)); } catch(e) {}
+    await sbUpsert(card);
+    setSyncStatus('saved');
   } catch(e) {
-    console.warn('Save error:', e);
-    // Retry once after 2 seconds
-    setTimeout(persist, 2000);
+    setSyncStatus('error');
+    toast('❌ Error al guardar — revisa tu conexión');
   }
 }
 
-function qSave() { clearTimeout(saveTimer); saveTimer=setTimeout(persist,600); }
+async function removeCard(id) {
+  setSyncStatus('saving');
+  try {
+    await sbDelete(id);
+    setSyncStatus('saved');
+  } catch(e) {
+    setSyncStatus('error');
+  }
+}
+
+// Polling cada 15s para ver cambios de otros usuarios
+function startPolling() {
+  pollTimer = setInterval(async () => {
+    try {
+      const rows = await sbGet();
+      const remote = rows.map(r => r.data);
+      if (JSON.stringify(remote) !== JSON.stringify(cards)) {
+        cards = remote;
+        render();
+        toast('🔄 Tablero actualizado');
+      }
+    } catch(e) {}
+  }, 15000);
+}
 
 // ─── FILTER ───────────────────────────────────────────────────────────────────
 function parseDate(d){
@@ -342,7 +373,7 @@ function visible() {
   return list;
 }
 
-// ─── RENDER BOARD ─────────────────────────────────────────────────────────────
+// ─── RENDER ───────────────────────────────────────────────────────────────────
 function render() {
   const vis = visible();
   const hasF = Object.values(AF).some(a=>a.length)||searchQ;
@@ -353,6 +384,7 @@ function render() {
       <div class="page-title">Social Media Content Tracker</div>
       <div class="collab-bar">
         <span class="collab-pill"><span class="online-dot"></span> Tablero compartido · ${cards.length} piezas</span>
+        <span class="sync-indicator"><span class="sync-dot ${syncStatus}"></span><span class="sync-text">${syncStatus==='saving'?'Guardando…':syncStatus==='error'?'Error al guardar':'Guardado'}</span></span>
       </div>
     </div>
     <div class="toolbar">
@@ -374,7 +406,7 @@ function render() {
       ${ddFilter('pilar','Pilar',PILAR_LIST,AF.pilar,'pilar')}
       ${ddFilter('serie','Serie',allSeries,AF.serie,'serie')}
       ${hasF?`<button class="clear-all-btn" onclick="clearF()">✕ Limpiar filtros</button>`:''}
-      <div style="margin-left:auto;display:flex;align-items:center;gap:6px;"><span class="flabel">Ordenar:</span><select class="dd-trigger" style="cursor:pointer;border-radius:8px" onchange="setSort(this.value)"><option value="default" ${sortBy==='default'?'selected':''}>Por defecto</option><option value="date_asc" ${sortBy==='date_asc'?'selected':''}>Fecha ↑</option><option value="date_desc" ${sortBy==='date_desc'?'selected':''}>Fecha ↓</option></select></div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:6px;"><select class="dd-trigger" style="cursor:pointer" onchange="setSort(this.value)"><option value="default" ${sortBy==='default'?'selected':''}>Por defecto</option><option value="date_asc" ${sortBy==='date_asc'?'selected':''}>Fecha ↑</option><option value="date_desc" ${sortBy==='date_desc'?'selected':''}>Fecha ↓</option></select></div>
     </div>
     <div class="board">
       ${Object.keys(STATUS).map(sk=>renderCol(sk,vis)).join('')}
@@ -425,10 +457,7 @@ function renderCard(c) {
   const allTags  = [chTags,ptTags,pilarTags,serieTags,whoTags,icpTags].filter(Boolean).join('');
   const footer   = c.date?`<div class="card-footer"><span class="cmeta">📅 ${fmt(c.date)}</span></div>`:'';
   return `<div class="card" draggable="true" data-id="${c.id}" onclick="openDetail('${c.id}')">
-    <div class="card-top">
-      <span class="card-grab">⠿</span>
-      <span class="card-title-text">${eH(c.title)}</span>
-    </div>
+    <div class="card-top"><span class="card-grab">⠿</span><span class="card-title-text">${eH(c.title)}</span></div>
     ${allTags?`<div class="card-tags">${allTags}</div>`:''}
     ${footer}
   </div>`;
@@ -447,29 +476,27 @@ function initDrag() {
       e.preventDefault();zone.classList.remove('drag-over');
       const ts=zone.dataset.col; if(!dragId||!ts) return;
       const card=cards.find(c=>c.id===dragId);
-      if(card&&card.status!==ts){card.status=ts;qSave();render();toast(`Movido a ${STATUS[ts].label}`);}
+      if(card&&card.status!==ts){card.status=ts;persistCard(card);render();toast(`Movido a ${STATUS[ts].label}`);}
       dragId=null;
     });
   });
 }
 
-// ─── DROPDOWN FILTERS ─────────────────────────────────────────────────────────
+// ─── DROPDOWNS ────────────────────────────────────────────────────────────────
 function initDropdowns() {
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.dd-wrap')) closeAllDD();
-  }, {once:true});
+  document.addEventListener('click', e=>{if(!e.target.closest('.dd-wrap'))closeAllDD();},{once:true});
 }
 function toggleDD(id) {
-  const menu = document.getElementById('dd-'+id);
-  const isOpen = menu.classList.contains('open');
+  const menu=document.getElementById('dd-'+id);
+  const isOpen=menu.classList.contains('open');
   closeAllDD();
-  if(!isOpen) {menu.classList.add('open'); openDropdown=id;}
+  if(!isOpen){menu.classList.add('open');openDropdown=id;}
 }
 function closeAllDD() {
   document.querySelectorAll('.dd-menu.open').forEach(m=>m.classList.remove('open'));
   openDropdown=null;
 }
-document.addEventListener('click', e=>{if(!e.target.closest('.dd-wrap'))closeAllDD();});
+document.addEventListener('click',e=>{if(!e.target.closest('.dd-wrap'))closeAllDD();});
 
 // ─── DETAIL PANEL ─────────────────────────────────────────────────────────────
 let detailCard = null;
@@ -499,166 +526,101 @@ function renderDetail() {
 
   overlay.innerHTML = `<div class="detail-panel">
     <button class="detail-close" onclick="closeDetail()">✕</button>
-
     <div class="detail-icon-area">📋</div>
     <div class="detail-title-area">
       <input class="detail-title" value="${eA(c.title)}" placeholder="Título del contenido..." oninput="detailCard.title=this.value">
     </div>
-
     <div class="detail-props">
-      <!-- Status -->
-      <div class="prop-row">
-        <div class="prop-label"><span class="prop-label-icon">⊞</span> Status</div>
+      <div class="prop-row"><div class="prop-label"><span class="prop-label-icon">⊞</span> Status</div>
         <div class="prop-value" onclick="toggleIProp(event,'status')">
           <span class="tag ${statusMeta.cls}">${statusMeta.label}</span>
-          <div class="prop-select-wrap">
-            <div class="inline-picker hidden" id="ip-status">
-              ${Object.entries(STATUS).map(([k,v])=>`<div class="ip-item${c.status===k?' on':''}" onclick="setProp('status','${k}');event.stopPropagation()">
-                <div class="ip-check">${c.status===k?'✓':''}</div>
-                <span class="tag ${v.cls}">${v.label}</span>
-              </div>`).join('')}
-            </div>
-          </div>
+          <div class="prop-select-wrap"><div class="inline-picker hidden" id="ip-status">
+            ${Object.entries(STATUS).map(([k,v])=>`<div class="ip-item${c.status===k?' on':''}" onclick="setProp('status','${k}');event.stopPropagation()"><div class="ip-check">${c.status===k?'✓':''}</div><span class="tag ${v.cls}">${v.label}</span></div>`).join('')}
+          </div></div>
         </div>
       </div>
-      <!-- Channel -->
-      <div class="prop-row">
-        <div class="prop-label"><span class="prop-label-icon">📡</span> Canal</div>
+      <div class="prop-row"><div class="prop-label"><span class="prop-label-icon">📡</span> Canal</div>
         <div class="prop-value${!c.channels.length?' empty':''}" onclick="toggleIProp(event,'channels')">
-          ${c.channels.length ? c.channels.map(ch=>`<span class="tag t-channel">${PLAT_ICONS[ch]||''} ${ch}</span>`).join('') : 'Vacío'}
-          <div class="prop-select-wrap">
-            <div class="inline-picker hidden" id="ip-channels">
-              ${CHANNELS.map(ch=>`<div class="ip-item${c.channels.includes(ch)?' on':''}" onclick="togglePropArr('channels','${ch}');event.stopPropagation()">
-                <div class="ip-check">${c.channels.includes(ch)?'✓':''}</div>${PLAT_ICONS[ch]||''} ${ch}
-              </div>`).join('')}
-            </div>
-          </div>
+          ${c.channels.length?c.channels.map(ch=>`<span class="tag t-channel">${PLAT_ICONS[ch]||''} ${ch}</span>`).join(''):'Vacío'}
+          <div class="prop-select-wrap"><div class="inline-picker hidden" id="ip-channels">
+            ${CHANNELS.map(ch=>`<div class="ip-item${c.channels.includes(ch)?' on':''}" onclick="togglePropArr('channels','${ch}');event.stopPropagation()"><div class="ip-check">${c.channels.includes(ch)?'✓':''}</div>${PLAT_ICONS[ch]||''} ${ch}</div>`).join('')}
+          </div></div>
         </div>
       </div>
-      <!-- Post Type -->
-      <div class="prop-row">
-        <div class="prop-label"><span class="prop-label-icon">🎬</span> Post Type</div>
+      <div class="prop-row"><div class="prop-label"><span class="prop-label-icon">🎬</span> Post Type</div>
         <div class="prop-value${!c.postType.length?' empty':''}" onclick="toggleIProp(event,'postType')">
-          ${c.postType.length ? c.postType.map(pt=>`<span class="tag t-posttype">${pt}</span>`).join('') : 'Vacío'}
-          <div class="prop-select-wrap">
-            <div class="inline-picker hidden" id="ip-postType">
-              ${POST_TYPES.map(pt=>`<div class="ip-item${(c.postType||[]).includes(pt)?' on':''}" onclick="togglePropArr('postType','${pt}');event.stopPropagation()">
-                <div class="ip-check">${(c.postType||[]).includes(pt)?'✓':''}</div>${pt}
-              </div>`).join('')}
-            </div>
-          </div>
+          ${c.postType.length?c.postType.map(pt=>`<span class="tag t-posttype">${pt}</span>`).join(''):'Vacío'}
+          <div class="prop-select-wrap"><div class="inline-picker hidden" id="ip-postType">
+            ${POST_TYPES.map(pt=>`<div class="ip-item${(c.postType||[]).includes(pt)?' on':''}" onclick="togglePropArr('postType','${pt}');event.stopPropagation()"><div class="ip-check">${(c.postType||[]).includes(pt)?'✓':''}</div>${pt}</div>`).join('')}
+          </div></div>
         </div>
       </div>
-      <!-- Publish Date -->
-      <div class="prop-row">
-        <div class="prop-label"><span class="prop-label-icon">📅</span> Publish Date</div>
-        <div class="prop-value">
-          <input type="date" style="border:none;outline:none;font-family:inherit;font-size:.84rem;color:var(--text);background:transparent;cursor:pointer" value="${c.date||''}" onchange="detailCard.date=this.value">
-        </div>
+      <div class="prop-row"><div class="prop-label"><span class="prop-label-icon">📅</span> Publish Date</div>
+        <div class="prop-value"><input type="date" style="border:none;outline:none;font-family:inherit;font-size:.84rem;color:var(--text);background:transparent;cursor:pointer" value="${c.date||''}" onchange="detailCard.date=this.value"></div>
       </div>
-      <!-- Who produces -->
-      <div class="prop-row">
-        <div class="prop-label"><span class="prop-label-icon">👤</span> Who produces</div>
+      <div class="prop-row"><div class="prop-label"><span class="prop-label-icon">👤</span> Who produces</div>
         <div class="prop-value${!c.who.length?' empty':''}" onclick="toggleIProp(event,'who')">
-          ${c.who.length ? c.who.map(w=>`<span class="tag t-who">${w}</span>`).join('') : 'Vacío'}
-          <div class="prop-select-wrap">
-            <div class="inline-picker hidden" id="ip-who">
-              ${WHO_LIST.map(w=>`<div class="ip-item${c.who.includes(w)?' on':''}" onclick="togglePropArr('who','${w}');event.stopPropagation()">
-                <div class="ip-check">${c.who.includes(w)?'✓':''}</div>${w}
-              </div>`).join('')}
-            </div>
-          </div>
+          ${c.who.length?c.who.map(w=>`<span class="tag t-who">${w}</span>`).join(''):'Vacío'}
+          <div class="prop-select-wrap"><div class="inline-picker hidden" id="ip-who">
+            ${WHO_LIST.map(w=>`<div class="ip-item${c.who.includes(w)?' on':''}" onclick="togglePropArr('who','${w}');event.stopPropagation()"><div class="ip-check">${c.who.includes(w)?'✓':''}</div>${w}</div>`).join('')}
+          </div></div>
         </div>
       </div>
-      <!-- Pilar -->
-      <div class="prop-row">
-        <div class="prop-label"><span class="prop-label-icon">🏛</span> Pilar</div>
+      <div class="prop-row"><div class="prop-label"><span class="prop-label-icon">🏛</span> Pilar</div>
         <div class="prop-value${!c.pilar.length?' empty':''}" onclick="toggleIProp(event,'pilar')">
-          ${c.pilar.length ? c.pilar.map(p=>`<span class="tag ${PILAR_TAG_CLS[p]||''}">${p}</span>`).join('') : 'Vacío'}
-          <div class="prop-select-wrap">
-            <div class="inline-picker hidden" id="ip-pilar">
-              ${PILAR_LIST.map(p=>`<div class="ip-item${c.pilar.includes(p)?' on':''}" onclick="setPilar('${eA(p)}');event.stopPropagation()">
-                <div class="ip-check">${c.pilar.includes(p)?'✓':''}</div>
-                <span class="tag ${PILAR_TAG_CLS[p]||''}">${p}</span>
-              </div>`).join('')}
-            </div>
-          </div>
+          ${c.pilar.length?c.pilar.map(p=>`<span class="tag ${PILAR_TAG_CLS[p]||''}">${p}</span>`).join(''):'Vacío'}
+          <div class="prop-select-wrap"><div class="inline-picker hidden" id="ip-pilar">
+            ${PILAR_LIST.map(p=>`<div class="ip-item${c.pilar.includes(p)?' on':''}" onclick="setPilar('${eA(p)}');event.stopPropagation()"><div class="ip-check">${c.pilar.includes(p)?'✓':''}</div><span class="tag ${PILAR_TAG_CLS[p]||''}">${p}</span></div>`).join('')}
+          </div></div>
         </div>
       </div>
-      <!-- Serie -->
-      <div class="prop-row">
-        <div class="prop-label"><span class="prop-label-icon">📚</span> Serie</div>
+      <div class="prop-row"><div class="prop-label"><span class="prop-label-icon">📚</span> Serie</div>
         <div class="prop-value${!c.serie.length?' empty':''}" onclick="${availSeries.length?`toggleIProp(event,'serie')`:'void(0)'}">
-          ${c.serie.length ? c.serie.map(s=>`<span class="tag ${SERIE_TAG_CLS[s]||''}">${s}</span>`).join('') : (c.pilar.length?'Vacío':'Selecciona Pilar primero')}
-          <div class="prop-select-wrap">
-            <div class="inline-picker hidden" id="ip-serie">
-              ${availSeries.map(s=>`<div class="ip-item${c.serie.includes(s)?' on':''}" onclick="togglePropArr('serie','${eA(s)}');event.stopPropagation()">
-                <div class="ip-check">${c.serie.includes(s)?'✓':''}</div>
-                <span class="tag ${SERIE_TAG_CLS[s]||''}">${s}</span>
-              </div>`).join('')}
-            </div>
-          </div>
+          ${c.serie.length?c.serie.map(s=>`<span class="tag ${SERIE_TAG_CLS[s]||''}">${s}</span>`).join(''):(c.pilar.length?'Vacío':'Selecciona Pilar primero')}
+          <div class="prop-select-wrap"><div class="inline-picker hidden" id="ip-serie">
+            ${availSeries.map(s=>`<div class="ip-item${c.serie.includes(s)?' on':''}" onclick="togglePropArr('serie','${eA(s)}');event.stopPropagation()"><div class="ip-check">${c.serie.includes(s)?'✓':''}</div><span class="tag ${SERIE_TAG_CLS[s]||''}">${s}</span></div>`).join('')}
+          </div></div>
         </div>
       </div>
-      <!-- ICP -->
-      <div class="prop-row">
-        <div class="prop-label"><span class="prop-label-icon">🎯</span> Target Audience</div>
+      <div class="prop-row"><div class="prop-label"><span class="prop-label-icon">🎯</span> Target Audience</div>
         <div class="prop-value${!c.icp.length?' empty':''}" onclick="toggleIProp(event,'icp')">
-          ${c.icp.length ? c.icp.map(i=>`<span class="tag t-icp">${i}</span>`).join('') : 'Vacío'}
-          <div class="prop-select-wrap">
-            <div class="inline-picker hidden" id="ip-icp">
-              ${ICP_LIST.map(i=>`<div class="ip-item${c.icp.includes(i)?' on':''}" onclick="togglePropArr('icp','${i}');event.stopPropagation()">
-                <div class="ip-check">${c.icp.includes(i)?'✓':''}</div>${i}
-              </div>`).join('')}
-            </div>
-          </div>
+          ${c.icp.length?c.icp.map(i=>`<span class="tag t-icp">${i}</span>`).join(''):'Vacío'}
+          <div class="prop-select-wrap"><div class="inline-picker hidden" id="ip-icp">
+            ${ICP_LIST.map(i=>`<div class="ip-item${c.icp.includes(i)?' on':''}" onclick="togglePropArr('icp','${i}');event.stopPropagation()"><div class="ip-check">${c.icp.includes(i)?'✓':''}</div>${i}</div>`).join('')}
+          </div></div>
         </div>
       </div>
-      <!-- Media Link -->
-      <div class="prop-row">
-        <div class="prop-label"><span class="prop-label-icon">🔗</span> Media Link</div>
-        <div class="prop-value">
-          <input type="url" style="border:none;outline:none;font-family:inherit;font-size:.84rem;color:var(--accent);background:transparent;width:100%" placeholder="https://..." value="${eA(c.url||'')}" oninput="detailCard.url=this.value">
-        </div>
+      <div class="prop-row"><div class="prop-label"><span class="prop-label-icon">🔗</span> Media Link</div>
+        <div class="prop-value"><input type="url" style="border:none;outline:none;font-family:inherit;font-size:.84rem;color:var(--accent);background:transparent;width:100%" placeholder="https://..." value="${eA(c.url||'')}" oninput="detailCard.url=this.value"></div>
       </div>
     </div>
-
     <div class="detail-body">
-      <!-- BRIEF -->
       <div class="section-block">
         <div class="section-heading">📝 Brief / Notas para producción</div>
         <div class="rich-toolbar">
-          <button class="rich-btn" onclick="rf('bold')" title="Negrita"><b>B</b></button>
-          <button class="rich-btn" onclick="rf('italic')" title="Cursiva"><i>I</i></button>
-          <button class="rich-btn" onclick="rf('underline')" title="Subrayado"><u>U</u></button>
+          <button class="rich-btn" onclick="rf('bold')"><b>B</b></button>
+          <button class="rich-btn" onclick="rf('italic')"><i>I</i></button>
+          <button class="rich-btn" onclick="rf('underline')"><u>U</u></button>
           <div class="rich-sep"></div>
-          <button class="rich-btn" onclick="rf('insertUnorderedList')" title="Lista">• Lista</button>
-          <button class="rich-btn" onclick="rf('insertOrderedList')" title="Numerada">1. Numerada</button>
+          <button class="rich-btn" onclick="rf('insertUnorderedList')">• Lista</button>
+          <button class="rich-btn" onclick="rf('insertOrderedList')">1. Numerada</button>
           <div class="rich-sep"></div>
-          <button class="rich-btn" onclick="insertTable()" title="Tabla">⊞ Tabla</button>
-          <button class="rich-btn" onclick="insertLink()" title="Link">🔗 Link</button>
+          <button class="rich-btn" onclick="insertTable()">⊞ Tabla</button>
+          <button class="rich-btn" onclick="insertLink()">🔗 Link</button>
           <div class="rich-sep"></div>
-          <button class="rich-btn" onclick="rf('removeFormat')" title="Limpiar formato">✕ Formato</button>
+          <button class="rich-btn" onclick="rf('removeFormat')">✕ Formato</button>
         </div>
         <div class="rich-editor" id="briefEditor" contenteditable="true" data-placeholder="Instrucciones, contexto, referencias textuales para la agencia…" oninput="detailCard.brief=this.innerHTML">${linkify(c.brief||'')}</div>
       </div>
-
-      <!-- SLIDES -->
       <div class="section-block">
         <div class="section-heading">🗂 Slides</div>
-        <div class="slides-list" id="slidesList">
-          ${(c.slides||[]).map((s,i)=>slideHTML(s,i)).join('')}
-        </div>
+        <div class="slides-list" id="slidesList">${(c.slides||[]).map((s,i)=>slideHTML(s,i)).join('')}</div>
         <button class="add-slide-btn" onclick="addSlide()">+ Agregar slide</button>
       </div>
-
-      <!-- COPY OUT -->
       <div class="section-block">
         <div class="section-heading">✍️ Copy out</div>
         <textarea class="section-textarea" placeholder="Caption, copy para el post…" oninput="detailCard.copyOut=this.value">${eH(c.copyOut||'')}</textarea>
       </div>
-
-      <!-- IMAGE REFS -->
       <div class="section-block">
         <div class="section-heading">🖼 Referencias de imagen</div>
         <div class="img-refs" id="imgRefs">
@@ -670,7 +632,6 @@ function renderDetail() {
         </div>
       </div>
     </div>
-
     <div class="detail-footer">
       ${currentDetailId?`<button class="btn btn-del" onclick="deleteCard()">Eliminar</button>`:''}
       <button class="btn btn-ghost" onclick="closeDetail()">Cancelar</button>
@@ -678,269 +639,114 @@ function renderDetail() {
     </div>
   </div>`;
 
-  // Close inline pickers on outside click + auto-expand textareas
   setTimeout(()=>{
-    overlay.addEventListener('click', e=>{
-      if(!e.target.closest('.prop-value')) closeAllPickers();
-    });
+    overlay.addEventListener('click',e=>{if(!e.target.closest('.prop-value'))closeAllPickers();});
     document.querySelectorAll('.section-textarea').forEach(ta=>{
-      // expand to fit existing content
-      ta.style.height='auto';
-      ta.style.height=ta.scrollHeight+'px';
-      // expand on typing
-      ta.addEventListener('input',function(){
-        this.style.height='auto';
-        this.style.height=this.scrollHeight+'px';
-      });
+      ta.style.height='auto'; ta.style.height=ta.scrollHeight+'px';
+      ta.addEventListener('input',function(){this.style.height='auto';this.style.height=this.scrollHeight+'px';});
     });
   },50);
 }
 
-function slideHTML(s,i){
-  return `<div class="slide-item" id="slide-${i}">
-    <div class="slide-header">
-      <span class="slide-num">Slide ${i+1}</span>
-      <button class="slide-del" onclick="removeSlide(${i})">✕</button>
-    </div>
-    <input class="slide-input" placeholder="Título del slide…" value="${eA(s.title||'')}" oninput="detailCard.slides[${i}].title=this.value">
-    <textarea class="slide-body" placeholder="Cuerpo / bullet points…" oninput="detailCard.slides[${i}].body=this.value">${eH(s.body||'')}</textarea>
-  </div>`;
-}
-
-function imgRefHTML(r,i){
-  return `<div class="img-ref-item">
-    <img src="${r}" alt="ref">
-    <button class="img-ref-del" onclick="removeRef(${i})">✕</button>
-  </div>`;
-}
-
-function addSlide(){
-  detailCard.slides.push({title:'',body:''});
-  const list=document.getElementById('slidesList');
-  const i=detailCard.slides.length-1;
-  list.insertAdjacentHTML('beforeend',slideHTML({title:'',body:''},i));
-}
-function removeSlide(i){
-  detailCard.slides.splice(i,1);
-  renderDetail();
-}
-function removeRef(i){
-  detailCard.refs.splice(i,1);
-  renderDetail();
-}
+function slideHTML(s,i){return `<div class="slide-item" id="slide-${i}"><div class="slide-header"><span class="slide-num">Slide ${i+1}</span><button class="slide-del" onclick="removeSlide(${i})">✕</button></div><input class="slide-input" placeholder="Título del slide…" value="${eA(s.title||'')}" oninput="detailCard.slides[${i}].title=this.value"><textarea class="slide-body" placeholder="Cuerpo / bullet points…" oninput="detailCard.slides[${i}].body=this.value">${eH(s.body||'')}</textarea></div>`;}
+function imgRefHTML(r,i){return `<div class="img-ref-item"><img src="${r}" alt="ref"><button class="img-ref-del" onclick="removeRef(${i})">✕</button></div>`;}
+function addSlide(){detailCard.slides.push({title:'',body:''});const list=document.getElementById('slidesList');const i=detailCard.slides.length-1;list.insertAdjacentHTML('beforeend',slideHTML({title:'',body:''},i));}
+function removeSlide(i){detailCard.slides.splice(i,1);renderDetail();}
+function removeRef(i){detailCard.refs.splice(i,1);renderDetail();}
 function triggerImgUpload(){document.getElementById('imgFileInput').click();}
 function handleImgUpload(e){
-  const files=[...e.target.files];
-  files.forEach(f=>{
+  [...e.target.files].forEach(f=>{
     const r=new FileReader();
-    r.onload=ev=>{
-      detailCard.refs.push(ev.target.result);
-      const refs=document.getElementById('imgRefs');
-      const uploadBtn=refs.querySelector('.img-upload-btn');
-      uploadBtn.insertAdjacentHTML('beforebegin',imgRefHTML(ev.target.result,detailCard.refs.length-1));
-    };
+    r.onload=ev=>{detailCard.refs.push(ev.target.result);const refs=document.getElementById('imgRefs');refs.querySelector('.img-upload-btn').insertAdjacentHTML('beforebegin',imgRefHTML(ev.target.result,detailCard.refs.length-1));};
     r.readAsDataURL(f);
   });
   e.target.value='';
 }
 
-// Inline prop pickers
-let openPicker = null;
-function toggleIProp(e, prop){
-  e.stopPropagation();
-  const picker = document.getElementById('ip-'+prop);
-  if(!picker) return;
-  const isOpen = !picker.classList.contains('hidden');
-  closeAllPickers();
-  if(!isOpen){picker.classList.remove('hidden');openPicker=prop;}
-}
-function closeAllPickers(){
-  document.querySelectorAll('.inline-picker').forEach(p=>p.classList.add('hidden'));
-  openPicker=null;
-}
-function setProp(prop, val){
-  detailCard[prop]=val;
-  closeAllPickers();
-  renderDetail();
-}
-function togglePropArr(prop, val){
-  const arr=detailCard[prop]||[];
-  detailCard[prop]=arr.includes(val)?arr.filter(x=>x!==val):[...arr,val];
-  renderDetail();
-  // Reopen the picker
-  setTimeout(()=>{
-    const picker=document.getElementById('ip-'+prop);
-    if(picker) picker.classList.remove('hidden');
-  },10);
-}
-function setPilar(val){
-  detailCard.pilar=[val];
-  detailCard.serie=[];
-  closeAllPickers();
-  renderDetail();
-  setTimeout(()=>{const p=document.getElementById('ip-pilar');if(p)p.classList.remove('hidden');},10);
-}
+let openPicker=null;
+function toggleIProp(e,prop){e.stopPropagation();const picker=document.getElementById('ip-'+prop);if(!picker)return;const isOpen=!picker.classList.contains('hidden');closeAllPickers();if(!isOpen){picker.classList.remove('hidden');openPicker=prop;}}
+function closeAllPickers(){document.querySelectorAll('.inline-picker').forEach(p=>p.classList.add('hidden'));openPicker=null;}
+function setProp(prop,val){detailCard[prop]=val;closeAllPickers();renderDetail();}
+function togglePropArr(prop,val){const arr=detailCard[prop]||[];detailCard[prop]=arr.includes(val)?arr.filter(x=>x!==val):[...arr,val];renderDetail();setTimeout(()=>{const p=document.getElementById('ip-'+prop);if(p)p.classList.remove('hidden');},10);}
+function setPilar(val){detailCard.pilar=[val];detailCard.serie=[];closeAllPickers();renderDetail();setTimeout(()=>{const p=document.getElementById('ip-pilar');if(p)p.classList.remove('hidden');},10);}
 
-function saveDetail(){
+async function saveDetail(){
   const title=detailCard.title.trim();
   if(!title){document.querySelector('.detail-title').focus();return;}
-  // Collect any textarea values that may not have fired oninput
   const briefEl=document.getElementById('briefEditor');
   if(briefEl) detailCard.brief=briefEl.innerHTML;
   const copyTA=document.querySelectorAll('.section-textarea')[1];
   if(copyTA) detailCard.copyOut=copyTA.value;
-  // Collect slides
   document.querySelectorAll('.slide-item').forEach((el,i)=>{
-    if(detailCard.slides[i]){
-      detailCard.slides[i].title=el.querySelector('.slide-input').value;
-      detailCard.slides[i].body=el.querySelector('.slide-body').value;
-    }
+    if(detailCard.slides[i]){detailCard.slides[i].title=el.querySelector('.slide-input').value;detailCard.slides[i].body=el.querySelector('.slide-body').value;}
   });
-
   if(currentDetailId){const idx=cards.findIndex(c=>c.id===currentDetailId);cards[idx]=detailCard;}
   else cards.unshift(detailCard);
-  qSave(); closeDetail(); render();
+  closeDetail(); render();
+  await persistCard(detailCard);
   toast(currentDetailId?'✓ Actualizado':'✓ Creado');
 }
 
-function deleteCard(){
+async function deleteCard(){
   if(!currentDetailId||!confirm('¿Eliminar?')) return;
-  cards=cards.filter(c=>c.id!==currentDetailId);
-  qSave(); closeDetail(); render(); toast('Eliminado');
+  const id=currentDetailId;
+  cards=cards.filter(c=>c.id!==id);
+  closeDetail(); render();
+  await removeCard(id);
+  toast('Eliminado');
 }
 
-// Rich editor helpers
-function linkify(text){
-  if(!text) return '';
-  // If it's already HTML (from rich editor), return as-is
-  if(text.trim().startsWith('<')) return text;
-  // Otherwise convert plain text: auto-link URLs
-  const escaped = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  return escaped.replace(/(https?:\/\/[^\s]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>').replace(/\n/g,'<br>');
-}
-function rf(cmd,val){document.getElementById('briefEditor')?.focus();document.execCommand(cmd,false,val||null);}
-function insertTable(){
-  const rows=parseInt(prompt('¿Cuántas filas?','3')||'3');
-  const cols=parseInt(prompt('¿Cuántas columnas?','2')||'2');
-  if(!rows||!cols) return;
-  let html='<table>';
-  html+='<tr>'+Array(cols).fill(0).map((_,i)=>`<th>Columna ${i+1}</th>`).join('')+'</tr>';
-  for(let r=0;r<rows-1;r++) html+='<tr>'+Array(cols).fill('<td>&nbsp;</td>').join('')+'</tr>';
-  html+='</table><p><br></p>';
-  document.getElementById('briefEditor')?.focus();
-  document.execCommand('insertHTML',false,html);
-  detailCard.brief=document.getElementById('briefEditor').innerHTML;
-}
-function insertLink(){
-  const url=prompt('URL del link:','https://');
-  if(!url||url==='https://') return;
-  const text=prompt('Texto del link (opcional, Enter para usar la URL):','')||url;
-  document.getElementById('briefEditor')?.focus();
-  document.execCommand('insertHTML',false,`<a href="${url}" target="_blank" rel="noopener">${text}</a>`);
-  detailCard.brief=document.getElementById('briefEditor').innerHTML;
-}
-
-function closeDetail(){
-  document.getElementById('detailOverlay').classList.add('hidden');
-  currentDetailId=null; detailCard=null;
-}
+function linkify(text){if(!text)return'';if(text.trim().startsWith('<'))return text;const e=text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');return e.replace(/(https?:\/\/[^\s]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>').replace(/\n/g,'<br>');}
+function rf(cmd){document.getElementById('briefEditor')?.focus();document.execCommand(cmd,false,null);}
+function insertTable(){const rows=parseInt(prompt('¿Cuántas filas?','3')||'3');const cols=parseInt(prompt('¿Cuántas columnas?','2')||'2');if(!rows||!cols)return;let html='<table><tr>'+Array(cols).fill(0).map((_,i)=>`<th>Col ${i+1}</th>`).join('')+'</tr>';for(let r=0;r<rows-1;r++)html+='<tr>'+Array(cols).fill('<td>&nbsp;</td>').join('')+'</tr>';html+='</table><p><br></p>';document.getElementById('briefEditor')?.focus();document.execCommand('insertHTML',false,html);detailCard.brief=document.getElementById('briefEditor').innerHTML;}
+function insertLink(){const url=prompt('URL:','https://');if(!url||url==='https://')return;const text=prompt('Texto (Enter para usar URL):','')||url;document.getElementById('briefEditor')?.focus();document.execCommand('insertHTML',false,`<a href="${url}" target="_blank" rel="noopener">${text}</a>`);detailCard.brief=document.getElementById('briefEditor').innerHTML;}
+function closeDetail(){document.getElementById('detailOverlay').classList.add('hidden');currentDetailId=null;detailCard=null;}
 function detailBgClose(e){if(e.target.id==='detailOverlay')closeDetail();}
 
-// ─── CSV IMPORT ───────────────────────────────────────────────────────────────
+// ─── CSV ─────────────────────────────────────────────────────────────────────
 function openImport(){document.getElementById('importOverlay').classList.remove('hidden');}
 function closeImport(){document.getElementById('importOverlay').classList.add('hidden');pendingImport=[];}
 function importBgClose(e){if(e.target.id==='importOverlay')closeImport();}
-
 function handleCSV(e){
-  const file=e.target.files[0]; if(!file) return;
+  const file=e.target.files[0];if(!file)return;
   const reader=new FileReader();
   reader.onload=ev=>{
-    const text=ev.target.result;
-    const rows=parseCSV(text);
+    const rows=parseCSV(ev.target.result);
     if(!rows.length){document.getElementById('importPreview').textContent='No se encontraron datos.';return;}
     const headers=Object.keys(rows[0]);
     pendingImport=rows.map(row=>{
-      // Map common Notion field names to our schema
-      const get=(...keys)=>{for(const k of keys){if(row[k]!==undefined&&row[k]!=='')return row[k];}return '';};
+      const get=(...keys)=>{for(const k of keys){if(row[k]!==undefined&&row[k]!=='')return row[k];}return'';};
       const getArr=(...keys)=>{const v=get(...keys);return v?v.split(',').map(x=>x.trim()).filter(Boolean):[];};
-      const statusMap={'Backlog':'backlog','Prioritize':'prioritize','🔥 Prioritize':'prioritize','Design feedback':'designfb','Design Feedback':'designfb','Scheduled':'scheduled','Published':'published','Archived':'archived'};
-      const rawStatus=get('Status','status','Estado');
-      return {
-        id:'imp'+Date.now().toString(36)+Math.random().toString(36).slice(2,5),
-        title:get('Name','Title','Título','title','name')||'Sin título',
-        status:statusMap[rawStatus]||'backlog',
-        channels:getArr('Channel','Channels','Canal','Platform','Platforms'),
-        postType:getArr('Post Type','PostType','Tipo'),
-        who:getArr('Who produces','Who Produces','Quién produce'),
-        pilar:getArr('Pilar','Pillar'),
-        serie:getArr('Serie','Series'),
-        icp:getArr('Target Audience','ICP','Audience'),
-        date:get('Publish Date','Date','Fecha','publish_date')||'',
-        brief:get('Reference','Brief','Notes','Notas')||'',
-        slides:[],refs:[],copyOut:'',notes:'',url:get('Media Link','URL','url')||'',
-        createdAt:Date.now(),
-      };
+      const sm={'Backlog':'backlog','Prioritize':'prioritize','🔥 Prioritize':'prioritize','Design feedback':'designfb','Design Feedback':'designfb','Scheduled':'scheduled','Published':'published','Archived':'archived'};
+      return{id:'imp'+Date.now().toString(36)+Math.random().toString(36).slice(2,5),title:get('Name','Title','Título','title','name')||'Sin título',status:sm[get('Status','status','Estado')]||'backlog',channels:getArr('Channel','Channels','Canal'),postType:getArr('Post Type','PostType'),who:getArr('Who produces','Who Produces'),pilar:getArr('Pilar','Pillar'),serie:getArr('Serie','Series'),icp:getArr('Target Audience','ICP'),date:get('Publish Date','Date','Fecha')||'',brief:get('Reference','Brief','Notes','Notas')||'',slides:[],refs:[],copyOut:'',notes:'',url:get('Media Link','URL','url')||'',createdAt:Date.now()};
     });
     const prev=document.getElementById('importPreview');
     prev.classList.remove('hidden');
-    prev.innerHTML=`<strong>${pendingImport.length} piezas encontradas</strong> — se agregarán al tablero sin borrar las existentes.<br><span style="color:var(--text3);font-size:.78rem">Columnas detectadas: ${headers.join(', ')}</span>`;
+    prev.innerHTML=`<strong>${pendingImport.length} piezas encontradas</strong><br><span style="color:var(--text3);font-size:.78rem">Columnas: ${headers.join(', ')}</span>`;
     document.getElementById('btnImportConfirm').classList.remove('hidden');
   };
   reader.readAsText(file);
 }
-
-function confirmImport(){
+async function confirmImport(){
   cards=[...cards,...pendingImport];
-  qSave(); closeImport(); render();
+  await Promise.all(pendingImport.map(sbUpsert));
+  closeImport(); render();
   toast(`✅ ${pendingImport.length} piezas importadas`);
   pendingImport=[];
 }
-
 function exportCSV(){
-  const headers = ['Publish Date','Post Title','Status','Channel','Pillar','Serie','Target Audience','Media Link','Reference','Materials to use','Who produces'];
-  const statusLabel = {backlog:'Backlog',prioritize:'🔥 Prioritize',designfb:'Design Feedback',scheduled:'Scheduled',published:'Published',archived:'Archived'};
-  const whoLabel = {'Distrito':'Distrito MKT','SM Team':'SM team','Val':'Val','Creative Studio':'Creative Studio'};
-
-  const rows = cards.map(c => [
-    c.date||'',
-    c.title||'',
-    statusLabel[c.status]||c.status,
-    (c.channels||[]).join(', '),
-    (c.pilar||[]).join(', '),
-    (c.serie||[]).join(', '),
-    (c.icp||[]).join(', '),
-    c.url||'',
-    c.brief||'',
-    c.notes||'',
-    (c.who||[]).map(w=>whoLabel[w]||w).join(', '),
-  ]);
-
-  const escape = v => {
-    const s = String(v||'');
-    return (s.includes(',') || s.includes('"') || s.includes('\n')) ? `"${s.replace(/"/g,'""')}"` : s;
-  };
-
-  const csv = [headers, ...rows].map(row => row.map(escape).join(',')).join('\n');
-  const blob = new Blob(['\uFEFF'+csv], {type:'text/csv;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'Boosted_Content_Tracker.csv';
-  a.click(); URL.revokeObjectURL(url);
-  toast('📤 CSV exportado — ' + cards.length + ' piezas');
+  const headers=['Publish Date','Post Title','Status','Channel','Pillar','Serie','Target Audience','Media Link','Reference','Who produces'];
+  const sl={backlog:'Backlog',prioritize:'🔥 Prioritize',designfb:'Design Feedback',scheduled:'Scheduled',published:'Published',archived:'Archived'};
+  const rows=cards.map(c=>[c.date||'',c.title||'',sl[c.status]||c.status,(c.channels||[]).join(', '),(c.pilar||[]).join(', '),(c.serie||[]).join(', '),(c.icp||[]).join(', '),c.url||'',c.brief||'',(c.who||[]).join(', ')]);
+  const esc=v=>{const s=String(v||'');return(s.includes(',')||s.includes('"')||s.includes('\n'))?`"${s.replace(/"/g,'""')}"`:s;};
+  const csv=[headers,...rows].map(r=>r.map(esc).join(',')).join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}));a.download='Content_Tracker.csv';a.click();
+  toast('📤 CSV exportado');
 }
-
 function parseCSV(text){
-  const lines=text.split('\n').filter(l=>l.trim());
-  if(lines.length<2) return [];
+  const lines=text.split('\n').filter(l=>l.trim());if(lines.length<2)return[];
   const headers=lines[0].split(',').map(h=>h.replace(/^"|"$/g,'').trim());
-  return lines.slice(1).map(line=>{
-    const vals=[];let cur='';let inQ=false;
-    for(const ch of line){if(ch==='"'){inQ=!inQ;}else if(ch===','&&!inQ){vals.push(cur.trim());cur='';}else{cur+=ch;}}
-    vals.push(cur.trim());
-    const obj={};
-    headers.forEach((h,i)=>obj[h]=(vals[i]||'').replace(/^"|"$/g,''));
-    return obj;
-  });
+  return lines.slice(1).map(line=>{const vals=[];let cur='';let inQ=false;for(const ch of line){if(ch==='"'){inQ=!inQ;}else if(ch===','&&!inQ){vals.push(cur.trim());cur='';}else{cur+=ch;}}vals.push(cur.trim());const obj={};headers.forEach((h,i)=>obj[h]=(vals[i]||'').replace(/^"|"$/g,''));return obj;});
 }
 
 // ─── UTILS ────────────────────────────────────────────────────────────────────
@@ -950,7 +756,7 @@ function clearType(type){AF[type]=[];render();}
 function clearF(){AF={channel:[],who:[],pilar:[],serie:[]};searchQ='';render();}
 function eH(t){return String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function eA(t){return String(t||'').replace(/'/g,"\\'").replace(/"/g,'&quot;');}
-function fmt(d){if(!d)return'';const dt=new Date(d+'T00:00:00');return dt.toLocaleDateString('es-MX',{day:'numeric',month:'short'});}
+function fmt(d){if(!d)return'';const dt=new Date(d+'T00:00:00');return isNaN(dt)?d:dt.toLocaleDateString('es-MX',{day:'numeric',month:'short'});}
 function toast(msg){const el=document.createElement('div');el.className='toast';el.textContent=msg;document.body.appendChild(el);setTimeout(()=>el.remove(),2400);}
 
 document.addEventListener('keydown',e=>{
@@ -958,17 +764,7 @@ document.addEventListener('keydown',e=>{
   if((e.metaKey||e.ctrlKey)&&e.key==='Enter'&&detailCard)saveDetail();
 });
 
-(async()=>{
-  await load(); render();
-  // Sync from Sheets every 30s to pick up changes from other users
-  setInterval(async()=>{
-    if (Date.now() - lastSaveTime > 25000) {
-      const prev = JSON.stringify(cards);
-      await load();
-      if(JSON.stringify(cards) !== prev) { render(); toast('🔄 Tablero actualizado'); }
-    }
-  }, 30000);
-})();
+(async()=>{await load();render();startPolling();})();
 </script>
 </body>
 </html>
