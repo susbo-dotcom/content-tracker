@@ -18,7 +18,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','Segoe UI',sans-serif;min-height:100vh;}
 
-/* PAGE HEADER */
+/* HEADER & TOOLBAR */
 .page-header{padding:44px 48px 16px;}
 .page-title{font-size:2.2rem;font-weight:800;letter-spacing:-.5px;}
 .collab-bar{display:flex;align-items:center;gap:10px;margin-top:10px;}
@@ -26,192 +26,99 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 .online-dot{width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
-/* TOOLBAR */
 .toolbar{display:flex;align-items:center;gap:8px;padding:12px 48px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
-.tab{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;font-size:.875rem;color:var(--text2);cursor:pointer;border:none;background:none;font-family:inherit;transition:background .15s;}
-.tab:hover{background:var(--surface2);}
+.tab{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;font-size:.875rem;color:var(--text2);cursor:pointer;border:none;background:none;font-family:inherit;}
 .tab.active{background:var(--surface2);color:var(--text);font-weight:500;}
-.sep{width:1px;height:20px;background:var(--border2);flex-shrink:0;}
 .toolbar-right{margin-left:auto;display:flex;align-items:center;gap:8px;}
-.search-wrap{position:relative;}
-.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:13px;pointer-events:none;}
-.search-input{border:1px solid var(--border2);border-radius:6px;padding:6px 12px 6px 30px;font-size:.82rem;color:var(--text);background:var(--surface);outline:none;font-family:inherit;width:200px;}
-.search-input:focus{border-color:var(--accent);}
-.btn-new{background:var(--accent);color:white;border:none;border-radius:6px;padding:7px 16px;font-size:.875rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s;}
-.btn-new:hover{background:#1a6fc4;}
+.search-input{border:1px solid var(--border2);border-radius:6px;padding:6px 12px;font-size:.82rem;outline:none;width:200px;}
+.btn-new{background:var(--accent);color:white;border:none;border-radius:6px;padding:7px 16px;font-size:.875rem;font-weight:600;cursor:pointer;}
 
-/* FILTER BAR */
-.filter-bar{display:flex;align-items:center;gap:8px;padding:10px 48px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap;}
-
-/* DROPDOWN FILTER */
-.dd-wrap{position:relative;}
-.dd-trigger{display:flex;align-items:center;gap:6px;padding:5px 12px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text2);font-size:.82rem;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap;font-weight:500;}
-.dd-trigger.active{background:var(--text);color:white;border-color:var(--text);}
-.dd-menu{position:absolute;top:calc(100% + 6px);left:0;background:var(--surface);border:1px solid var(--border2);border-radius:10px;box-shadow:var(--shadow-md);padding:6px;min-width:180px;z-index:150;display:none;flex-direction:column;gap:2px;}
-.dd-menu.open{display:flex;}
-.dd-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;cursor:pointer;font-size:.84rem;color:var(--text);transition:background .12s;}
-.dd-item:hover{background:var(--surface2);}
-.dd-item.checked .check{background:var(--accent);border-color:var(--accent);color:white;}
-.dd-clear{font-size:.78rem;color:#e03e3e;padding:5px 10px;cursor:pointer;border-radius:6px;}
-.dd-clear:hover{background:#fff5f5;}
-.active-count{background:var(--accent);color:white;border-radius:20px;padding:0 6px;font-size:.7rem;font-weight:700;}
-.clear-all-btn{font-size:.78rem;color:#e03e3e;cursor:pointer;background:none;border:none;font-family:inherit;font-weight:600;padding:4px 8px;border-radius:6px;}
-
-/* BOARD & CARDS */
+/* BOARD */
 .board{display:flex;padding:20px 48px 60px;overflow-x:auto;align-items:flex-start;gap:14px;}
 .col{min-width:272px;width:272px;flex-shrink:0;}
 .col-header{display:flex;align-items:center;gap:8px;padding:2px 2px 12px;}
 .col-badge{font-size:.82rem;font-weight:600;padding:4px 14px;border-radius:20px;flex:1;}
 .col-count{font-size:.75rem;color:var(--text3);}
-.cards{display:flex;flex-direction:column;gap:8px;min-height:60px;border-radius:8px;padding:2px;}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:13px 14px 11px;cursor:pointer;box-shadow:var(--shadow);user-select:none;transition:box-shadow .15s;}
+
+.cards{display:flex;flex-direction:column;gap:8px;min-height:60px;border-radius:8px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:13px 14px 11px;cursor:pointer;box-shadow:var(--shadow);transition:box-shadow .15s;}
 .card:hover{box-shadow:var(--shadow-md); border-color:var(--border2);}
 .card-title-text{font-size:.875rem;font-weight:500;line-height:1.45;}
 .card-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
-.tag{font-size:.72rem;padding:2px 9px;border-radius:5px;font-weight:500;display:inline-block;white-space:nowrap;}
-
-/* STATUS COLORS */
-.s-backlog{background:#dbeafe;color:#1d4ed8;}
-.s-prioritize{background:#e5e7eb;color:#374151;}
-.s-designfb{background:#fef9c3;color:#854d0e;}
-.s-scheduled{background:#fed7aa;color:#9a3412;}
-.s-published{background:#dcfce7;color:#166534;}
-.s-archived{background:#ede9fe;color:#5b21b6;}
-
-/* TAG COLORS */
-.t-product{background:var(--product-bg);color:var(--product-fg);}
-.t-money{background:var(--money-bg);color:var(--money-fg);}
-.t-modern{background:var(--modern-bg);color:var(--modern-fg);}
-.t-pda{background:var(--pda-bg);color:var(--pda-fg);}
-.t-plat{background:#f1f5f9;color:#475569;}
-.t-who{background:#f3f0ff;color:#5b3fa6;}
-.t-icp{background:var(--icp-bg);color:var(--icp-fg);}
-.t-channel{background:#ecfdf5;color:#065f46;}
-.t-posttype{background:#fff7ed;color:#9a3412;}
+.tag{font-size:.72rem;padding:2px 8px;border-radius:4px;font-weight:500;display:inline-block;}
 
 /* DETAIL PANEL */
 .detail-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;backdrop-filter:blur(2px);overflow-y:auto;}
 .detail-panel{background:var(--surface);border-radius:14px;width:100%;max-width:740px;box-shadow:0 24px 80px rgba(0,0,0,.2);position:relative;}
-.detail-title{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;border:none;outline:none;width:100%;font-family:inherit;padding:24px 48px 12px;background:transparent;}
-.detail-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text3);font-size:18px;cursor:pointer;width:32px;height:32px;border-radius:8px;}
+.detail-title{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;border:none;outline:none;width:100%;padding:24px 48px 12px;background:transparent;}
+.detail-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text3);}
 
-/* PROPERTIES TABLE */
-.detail-props{padding:20px 48px 0;display:flex;flex-direction:column;gap:2px;}
-.prop-row{display:grid;grid-template-columns:160px 1fr;align-items:start;padding:5px 0;border-radius:6px;}
-.prop-label{display:flex;align-items:center;gap:7px;font-size:.84rem;color:var(--text2);padding:4px 8px 4px 0;}
-.prop-value{display:flex;align-items:center;flex-wrap:wrap;gap:5px;padding:4px 8px;min-height:30px;font-size:.84rem;cursor:pointer;border-radius:6px;}
-
-/* BRIEF ENRIQUECIDO & TABLAS */
+/* BRIEF & TABLES */
 .section-rich-text {
-  border: 1px solid transparent;
+  border: 1px solid var(--border);
   outline: none;
   width: 100%;
-  font-family: inherit;
-  font-size: .9rem;
-  color: var(--text);
-  background: transparent;
-  line-height: 1.6;
-  min-height: 120px;
+  min-height: 150px;
   padding: 12px;
-  border-radius: 6px;
-  transition: background .12s;
+  border-radius: 8px;
+  font-size: .9rem;
+  line-height: 1.6;
 }
-.section-rich-text:focus { background: var(--surface2); border-color: var(--border); }
-
 .section-rich-text table {
   width: 100%;
   border-collapse: collapse;
   margin: 15px 0;
-  font-size: 0.85rem;
 }
 .section-rich-text th, .section-rich-text td {
   border: 1px solid var(--border2);
   padding: 10px;
+  text-align: left;
   vertical-align: top;
 }
-.section-rich-text th { background: var(--surface2); font-weight: 700; text-align: left; }
+.section-rich-text th { background: var(--surface2); font-weight: 700; }
 
 .hidden{display:none!important;}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:white;border-radius:8px;padding:10px 20px;z-index:999;box-shadow:var(--shadow-md);animation:fadeUp .2s ease;}
-@keyframes fadeUp{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
-
-@media(max-width:640px){
-  .board{padding:16px;}
-  .prop-row{grid-template-columns:120px 1fr;}
-}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:white;border-radius:8px;padding:10px 20px;z-index:999;}
 </style>
 </head>
 <body>
-<div id="root">Cargando tablero...</div>
+
+<div id="root"></div>
 <div id="detailOverlay" class="detail-overlay hidden" onclick="detailBgClose(event)"></div>
 
 <script>
-// --- TAXONOMY ---
+// --- CONFIGURACIÓN ---
 const STATUS = {
-  backlog:    {label:'Backlog',         cls:'s-backlog',    order:0},
-  prioritize: {label:'🔥 Prioritize',   cls:'s-prioritize', order:1},
-  designfb:   {label:'Design feedback', cls:'s-designfb',   order:2},
-  scheduled:  {label:'Scheduled',       cls:'s-scheduled',  order:3},
-  published:  {label:'Published',       cls:'s-published',  order:4},
-  archived:   {label:'Archived',        cls:'s-archived',   order:5},
+  backlog:    {label:'Backlog',         cls:'s-backlog'},
+  prioritize: {label:'🔥 Prioritize',   cls:'s-prioritize'},
+  designfb:   {label:'Design feedback', cls:'s-designfb'},
+  scheduled:  {label:'Scheduled',       cls:'s-scheduled'},
+  published:  {label:'Published',       cls:'s-published'}
 };
-const CHANNELS = ['Instagram','TikTok','Twitter/X','YouTube','LinkedIn','Facebook','Newsletter'];
-const POST_TYPES = ['Carousel','Reel','Story','Static','Thread','Video','Email'];
-const WHO_LIST = ['Distrito','SM Team','Creative Studio','Val'];
-const PILAR_LIST = ['Product','Money talks','Modern investor','PdA'];
-const PILAR_SERIES = {
-  'Product': ['Guides','Value prop','Safety'],
-  'Money talks': ['Pop culture','Lifestyle'],
-  'Modern investor': ['Strategies','Market analysis','Mindset'],
-  'PdA': [],
-};
-const PILAR_TAG_CLS = {'Product':'t-product','Money talks':'t-money','Modern investor':'t-modern','PdA':'t-pda'};
-const SERIE_TAG_CLS = {
-  'Guides':'t-sr-product','Value prop':'t-sr-product','Safety':'t-sr-product',
-  'Pop culture':'t-sr-money','Lifestyle':'t-sr-money',
-  'Strategies':'t-sr-modern','Market analysis':'t-sr-modern','Mindset':'t-sr-modern',
-};
-const PLAT_ICONS = {Instagram:'📸',TikTok:'🎵','Twitter/X':'🐦',YouTube:'▶️',LinkedIn:'💼',Facebook:'📘',Newsletter:'📧'};
 
-// --- STATE ---
 let cards = [];
 let searchQ = '';
-let AF = {channel:[], who:[], pilar:[], serie:[]};
-let detailCard = null;
-let currentDetailId = null;
 
-// --- STORAGE ---
-async function persist() { localStorage.setItem('bct_v2', JSON.stringify(cards)); }
-async function load() {
-  const data = localStorage.getItem('bct_v2');
+// --- CARGA Y GUARDADO ---
+function persist() { localStorage.setItem('bct_v3_final', JSON.stringify(cards)); }
+function load() {
+  const data = localStorage.getItem('bct_v3_final');
   cards = data ? JSON.parse(data) : [];
   render();
 }
 
-// --- UTILS ---
-function fmtDate(d) {
-  if (!d) return '';
-  if (isNaN(Date.parse(d)) && !/^\d{4}-\d{2}-\d{2}/.test(d)) return d;
-  try {
-    const dt = new Date(d.includes('T') ? d : d + 'T00:00:00');
-    return dt.toLocaleDateString('es-MX', { day: 'numeric', month: 'short' });
-  } catch (e) { return d; }
-}
-
-function eA(t){return String(t||'').replace(/'/g,"\\'").replace(/"/g,'&quot;');}
-
-// --- RENDERING ---
+// --- RENDERIZADO DEL TABLERO ---
 function render() {
   const vis = cards.filter(c => {
     const q = searchQ.toLowerCase();
     return c.title.toLowerCase().includes(q) || (c.brief || '').toLowerCase().includes(q);
   });
 
-  // ORDENAR POR FECHA (Cercana arriba, sin fecha abajo)
+  // ORDENAR POR FECHA
   vis.sort((a, b) => {
     if (!a.date) return 1;
     if (!b.date) return -1;
-    return new Date(a.date + 'T00:00:00') - new Date(b.date + 'T00:00:00');
+    return new Date(a.date) - new Date(b.date);
   });
 
   document.getElementById('root').innerHTML = `
@@ -224,9 +131,7 @@ function render() {
     <div class="toolbar">
       <button class="tab active">⊞ Pipeline</button>
       <div class="toolbar-right">
-        <div class="search-wrap">
-          <input class="search-input" placeholder="Buscar..." oninput="searchQ=this.value;render()">
-        </div>
+        <input class="search-input" placeholder="Buscar..." value="${searchQ}" oninput="searchQ=this.value;render()">
         <button class="btn-new" onclick="openDetail(null)">+ New</button>
       </div>
     </div>
@@ -240,10 +145,9 @@ function render() {
           <div class="cards">
             ${vis.filter(c => c.status === sk).map(c => `
               <div class="card" onclick="openDetail('${c.id}')">
-                <div class="card-title-text">${c.title}</div>
+                <div class="card-title-text">${c.title || 'Sin título'}</div>
                 <div class="card-tags">
-                  ${(c.channels||[]).map(ch => `<span class="tag t-plat">${ch}</span>`).join('')}
-                  ${c.date ? `<span class="tag" style="background:#eee">📅 ${fmtDate(c.date)}</span>` : ''}
+                  ${c.date ? `<span class="tag" style="background:#eee">📅 ${c.date}</span>` : ''}
                 </div>
               </div>
             `).join('')}
@@ -254,17 +158,18 @@ function render() {
   `;
 }
 
+// --- DETALLE ---
+let detailCard = null;
+
 function openDetail(id) {
   if(id) {
     detailCard = JSON.parse(JSON.stringify(cards.find(c => c.id === id)));
-    currentDetailId = id;
   } else {
-    detailCard = { id:'c'+Date.now(), title:'', status:'backlog', brief:'', date:'', channels:[] };
-    currentDetailId = null;
+    detailCard = { id:'c'+Date.now(), title:'', status:'backlog', brief:'', date:'' };
   }
   document.body.style.overflow = 'hidden';
-  renderDetail();
   document.getElementById('detailOverlay').classList.remove('hidden');
+  renderDetail();
 }
 
 function renderDetail() {
@@ -272,101 +177,59 @@ function renderDetail() {
   document.getElementById('detailOverlay').innerHTML = `
     <div class="detail-panel">
       <button class="detail-close" onclick="closeDetail()">✕</button>
-      <input class="detail-title" value="${eA(c.title)}" oninput="detailCard.title=this.value" placeholder="Título del contenido...">
+      <input class="detail-title" value="${c.title}" oninput="detailCard.title=this.value" placeholder="Título del contenido...">
       
-      <div class="detail-props">
-        <div class="prop-row">
-          <div class="prop-label">📅 Fecha Pub.</div>
-          <div class="prop-value">
-            <input type="date" value="${c.date || ''}" onchange="detailCard.date=this.value" style="border:none;outline:none;font-family:inherit;background:transparent;">
-          </div>
+      <div style="padding:0 48px 20px; display:flex; gap:20px;">
+        <div>
+          <label style="font-size:12px; color:var(--text3);">Fecha Pub.</label><br>
+          <input type="date" value="${c.date || ''}" onchange="detailCard.date=this.value">
         </div>
-        <div class="prop-row">
-          <div class="prop-label">⊞ Status</div>
-          <div class="prop-value">
-            <select onchange="detailCard.status=this.value" style="border:none;outline:none;background:transparent;font-family:inherit;">
-              ${Object.entries(STATUS).map(([k,v]) => `<option value="${k}" ${c.status===k?'selected':''}>${v.label}</option>`).join('')}
-            </select>
-          </div>
+        <div>
+          <label style="font-size:12px; color:var(--text3);">Status</label><br>
+          <select onchange="detailCard.status=this.value">
+            ${Object.entries(STATUS).map(([k,v]) => `<option value="${k}" ${c.status===k?'selected':''}>${v.label}</option>`).join('')}
+          </select>
         </div>
       </div>
 
-      <div style="padding:24px 48px 40px">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-          <span style="font-size:.72rem; font-weight:700; text-transform:uppercase; color:var(--text3);">📝 Brief & Script</span>
-          <button onclick="insertTableTemplate()" style="font-size:10px; padding:2px 8px; cursor:pointer; border-radius:4px; border:1px solid var(--border2); background:white;">+ Insertar Tabla Script</button>
+      <div style="padding:0 48px 40px">
+        <div style="margin-bottom:10px; display:flex; justify-content:space-between;">
+          <span style="font-size:12px; font-weight:700;">📝 BRIEF & SCRIPT</span>
+          <button onclick="insertTable()" style="font-size:10px; cursor:pointer;">+ Insertar Tabla</button>
         </div>
-        <div id="briefEditor" class="section-rich-text" contenteditable="true" oninput="detailCard.brief=this.innerHTML">
-          ${c.brief || ''}
-        </div>
+        <div id="briefEditor" class="section-rich-text" contenteditable="true">${c.brief || ''}</div>
         
-        <div style="margin-top:30px; display:flex; gap:8px; justify-content: flex-end;">
-          ${currentDetailId ? `<button onclick="deleteCard()" style="margin-right:auto; color:#e03e3e; border:none; background:none; cursor:pointer;">Eliminar</button>` : ''}
-          <button class="tab" onclick="closeDetail()" style="border:1px solid var(--border2)">Cancelar</button>
-          <button onclick="saveDetail()" style="background:var(--accent); color:white; border:none; padding:8px 24px; border-radius:8px; font-weight:600; cursor:pointer;">Guardar</button>
+        <div style="margin-top:20px; display:flex; justify-content:flex-end; gap:10px;">
+          ${idExists(c.id) ? `<button onclick="deleteCard('${c.id}')" style="margin-right:auto; color:red; border:none; background:none; cursor:pointer;">Eliminar</button>` : ''}
+          <button onclick="closeDetail()">Cancelar</button>
+          <button onclick="saveDetail()" style="background:var(--accent); color:white; border:none; padding:8px 20px; border-radius:6px; cursor:pointer;">Guardar</button>
         </div>
       </div>
     </div>
   `;
 }
 
-function insertTableTemplate() {
-  const tableHTML = `
-    <table>
-      <thead><tr><th>Visual</th><th>Audio (Locución / Voiceover)</th></tr></thead>
-      <tbody>
-        <tr><td>Imagen anatómica del cerebro...</td><td>Hola. Soy tu cerebro...</td></tr>
-        <tr><td>...</td><td>...</td></tr>
-      </tbody>
-    </table><br>
-  `;
-  const editor = document.getElementById('briefEditor');
-  editor.focus();
-  document.execCommand('insertHTML', false, tableHTML);
+function insertTable() {
+  const table = `<table><thead><tr><th>Visual</th><th>Audio (Locución)</th></tr></thead><tbody><tr><td>...</td><td>...</td></tr></tbody></table><br>`;
+  document.getElementById('briefEditor').focus();
+  document.execCommand('insertHTML', false, table);
 }
 
 function saveDetail() {
-  const editor = document.getElementById('briefEditor');
-  if (editor) detailCard.brief = editor.innerHTML;
-  
-  if(!detailCard.title.trim()) { alert("El título es obligatorio"); return; }
-
-  if(currentDetailId) {
-    const idx = cards.findIndex(c => c.id === currentDetailId);
-    cards[idx] = detailCard;
-  } else {
-    cards.push(detailCard);
-  }
-  persist();
-  closeDetail();
-  render();
-  toast(currentDetailId ? "✓ Actualizado" : "✓ Creado");
+  detailCard.brief = document.getElementById('briefEditor').innerHTML;
+  const idx = cards.findIndex(c => c.id === detailCard.id);
+  if(idx > -1) cards[idx] = detailCard;
+  else cards.push(detailCard);
+  persist(); closeDetail(); render();
 }
 
-function deleteCard() {
-  if(!confirm("¿Eliminar esta pieza?")) return;
-  cards = cards.filter(c => c.id !== currentDetailId);
-  persist();
-  closeDetail();
-  render();
+function deleteCard(id) {
+  if(confirm('¿Eliminar?')) { cards = cards.filter(c => c.id !== id); persist(); closeDetail(); render(); }
 }
 
-function closeDetail() {
-  document.getElementById('detailOverlay').classList.add('hidden');
-  document.body.style.overflow = 'auto';
-  currentDetailId = null;
-  detailCard = null;
-}
-
+function closeDetail() { document.getElementById('detailOverlay').classList.add('hidden'); document.body.style.overflow = 'auto'; }
 function detailBgClose(e) { if(e.target.id === 'detailOverlay') closeDetail(); }
-
-function toast(msg) {
-  const el = document.createElement('div');
-  el.className = 'toast';
-  el.textContent = msg;
-  document.body.appendChild(el);
-  setTimeout(() => el.remove(), 2500);
-}
+function idExists(id) { return cards.some(c => c.id === id); }
 
 load();
 </script>
