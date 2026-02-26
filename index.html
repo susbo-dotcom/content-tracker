@@ -213,7 +213,7 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Inter','S
 <script>
 // ─── SUPABASE CONFIG ──────────────────────────────────────────────────────────
 const SB_URL = 'https://gfcagpyponsltsxxsbkd.supabase.co';
-const SB_KEY = 'sb_publishable__qOsvJUbXtFZBcy6Aj68yA_v1d4qiFq';
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmY2FncHlwb25zbHRzeHhzYmtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIxMzg1OTQsImV4cCI6MjA4NzcxNDU5NH0.V_pSg1_Ghu7sbUntHyRk21UH55JDHd7gIRBTaA8kbeQ';
 const SB_HEADERS = {
   'Content-Type': 'application/json',
   'apikey': SB_KEY,
@@ -288,6 +288,7 @@ let pendingImport = [];
 let openDropdown = null;
 let syncStatus = 'saved'; // 'saving' | 'saved' | 'error'
 let pollTimer;
+let isSaving = false;
 
 // ─── LOAD & SYNC ──────────────────────────────────────────────────────────────
 async function load() {
@@ -317,6 +318,7 @@ function setSyncStatus(s) {
 }
 
 async function persistCard(card) {
+  isSaving = true;
   setSyncStatus('saving');
   try {
     await sbUpsert(card);
@@ -324,22 +326,28 @@ async function persistCard(card) {
   } catch(e) {
     setSyncStatus('error');
     toast('❌ Error al guardar — revisa tu conexión');
+  } finally {
+    isSaving = false;
   }
 }
 
 async function removeCard(id) {
+  isSaving = true;
   setSyncStatus('saving');
   try {
     await sbDelete(id);
     setSyncStatus('saved');
   } catch(e) {
     setSyncStatus('error');
+  } finally {
+    isSaving = false;
   }
 }
 
 // Polling cada 15s para ver cambios de otros usuarios
 function startPolling() {
   pollTimer = setInterval(async () => {
+    if (isSaving) return; // no pisar guardados en curso
     try {
       const rows = await sbGet();
       const remote = rows.map(r => r.data);
